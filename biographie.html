@@ -11,7 +11,7 @@
     <meta property="og:title" content="Biographie — Rabbi TAN DAH MèHOU KPOTCHÈDJI">
     <meta property="og:description" content="La vie et le parcours extraordinaire de YEHOUME Cyriaque Stanislas, de Parakou au Palais Royal d'Allada.">
     <meta property="og:type" content="profile">
-    <meta property="og:image" content="ph01.jpg">
+    <meta property="og:image" content="a.jpg">
     <meta property="og:locale" content="fr_BJ">
     <meta name="twitter:card" content="summary_large_image">
     <script type="application/ld+json">
@@ -201,7 +201,7 @@
         @media(max-width:860px) { .titles-grid { grid-template-columns:repeat(2,1fr); } }
         @media(max-width:540px) { .titles-grid { grid-template-columns:1fr; } }
 
-        /* PORTRAIT GALLERY */
+        /* PORTRAIT GALLERY (sans légendes) */
         #photos-bio { background:var(--gray-light); }
         .bio-photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
         .bio-photo-item { position:relative; overflow:hidden; border-radius:4px; cursor:pointer; box-shadow:0 4px 15px rgba(0,0,0,0.05); }
@@ -209,8 +209,6 @@
         .bio-photo-item:not(:first-child) { aspect-ratio:1; }
         .bio-photo-item img { width:100%; height:100%; object-fit:cover; transition:transform .5s, filter .4s; }
         .bio-photo-item:hover img { transform:scale(1.05); filter:brightness(1); }
-        .bio-photo-caption { position:absolute; bottom:0; left:0; right:0; padding:14px 16px; background:linear-gradient(to top, rgba(0,0,0,.7), transparent); font-family:var(--ff-sub); font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:white; opacity:0; transition:opacity .35s; }
-        .bio-photo-item:hover .bio-photo-caption { opacity:1; }
         @media(max-width:640px) { .bio-photo-grid { grid-template-columns:1fr 1fr; } .bio-photo-item:first-child { grid-column:span 2; aspect-ratio:4/3; } }
 
         /* ORGANISATIONS */
@@ -289,7 +287,7 @@
 
     <!-- PAGE HERO -->
     <div class="page-hero">
-        <img class="page-hero-img" src="ph01.jpg" alt="Rabbi TAN portrait" onerror="this.style.display='none'">
+        <img class="page-hero-img" src="a.jpg" alt="Rabbi TAN portrait" onerror="this.style.display='none'">
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
             <div class="breadcrumb reveal"><a href="index.html">Accueil</a> › <span>Biographie</span></div>
@@ -309,7 +307,7 @@
                             <div class="identity-photo-spin"></div>
                             <div class="identity-photo-mask"></div>
                             <div class="identity-photo-inner">
-                                <img src="pha.jpg" alt="Portrait officiel Rabbi TAN" onerror="this.src='https://placehold.co/340x440/1E3A8A/FFFFFF?text=Rabbi+TAN'">
+                                <img src="a.jpg" alt="Portrait officiel Rabbi TAN" onerror="this.src='https://placehold.co/340x440/1E3A8A/FFFFFF?text=Rabbi+TAN'">
                             </div>
                         </div>
                     </div>
@@ -353,7 +351,7 @@
 
     <div class="divider"><div class="divider-line"></div><div class="divider-star">✦ ✦ ✦</div><div class="divider-line"></div></div>
 
-    <!-- PHOTOS BIO -->
+    <!-- PHOTOS BIO (uniquement a.jpg à o.jpg, sans légendes) -->
     <section id="photos-bio">
         <div class="section-inner">
             <div class="section-header">
@@ -362,25 +360,20 @@
                 <div class="section-line reveal" style="margin:0 auto;"></div>
             </div>
             <div class="bio-photo-grid">
-                <div class="bio-photo-item reveal" onclick="openLightbox('ph01.jpg','Rabbi TAN en mission spirituelle')">
-                    <img src="ph01.jpg" alt="Rabbi TAN en mission spirituelle" loading="lazy" onerror="this.src='https://placehold.co/700x400/1E3A8A/FFFFFF?text=Rabbi+TAN+Mission'">
-                    <div class="bio-photo-caption">En mission spirituelle</div>
+                <div class="bio-photo-item reveal">
+                    <img src="a.jpg" alt="Rabbi TAN" loading="lazy">
                 </div>
-                <div class="bio-photo-item reveal" onclick="openLightbox('ph02.jpg','Cérémonie officielle Rabbi TAN')">
-                    <img src="ph02.jpg" alt="Cérémonie officielle Rabbi TAN" loading="lazy" onerror="this.src='https://placehold.co/400x400/DC2626/FFFFFF?text=Cérémonie'">
-                    <div class="bio-photo-caption">Cérémonie officielle</div>
+                <div class="bio-photo-item reveal">
+                    <img src="b.jpg" alt="Rabbi TAN" loading="lazy">
                 </div>
-                <div class="bio-photo-item reveal" onclick="openLightbox('ph03.jpg','Rabbi TAN et les dignitaires')">
-                    <img src="ph03.jpg" alt="Rabbi TAN entouré de dignitaires béninois" loading="lazy" onerror="this.src='https://placehold.co/400x400/1E3A8A/FFFFFF?text=Dignitaires'">
-                    <div class="bio-photo-caption">Avec les Dignitaires</div>
+                <div class="bio-photo-item reveal">
+                    <img src="c.jpg" alt="Rabbi TAN" loading="lazy">
                 </div>
-                <div class="bio-photo-item reveal" style="grid-column:span 3;" onclick="openLightbox('ph04.jpg','Intronisation au Palais Royal d\'Allada')">
-                    <img src="ph04.jpg" alt="Intronisation Rabbi TAN Mèhou Palais Royal Allada 14 décembre 2020" loading="lazy" onerror="this.src='https://placehold.co/1000x420/7C3AED/F5D67B?text=Intronisation+Royale+2020'" style="width:100%;height:300px;object-fit:cover;">
-                    <div class="bio-photo-caption">Intronisation Royale — 14 Décembre 2020, Allada</div>
+                <div class="bio-photo-item reveal" style="grid-column:span 3;">
+                    <img src="d.jpg" alt="Rabbi TAN" loading="lazy" style="width:100%;height:300px;object-fit:cover;">
                 </div>
-                <div class="bio-photo-item reveal" onclick="openLightbox('ph05.jpg','Rabbi TAN Superman Informatique')">
-                    <img src="ph05.jpg" alt="Rabbi TAN fondateur Superman Informatique 25000 personnes formées" loading="lazy" onerror="this.src='https://placehold.co/400x400/D4AF37/FFFFFF?text=Superman+Info'">
-                    <div class="bio-photo-caption">Superman Informatique</div>
+                <div class="bio-photo-item reveal">
+                    <img src="e.jpg" alt="Rabbi TAN" loading="lazy">
                 </div>
             </div>
         </div>
