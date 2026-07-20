@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temple des Grandes Victoires TGV — Rabbi TAN | Les Divinités Endogènes Bénin</title>
-    <meta name="description" content="Découvrez le Temple des Grandes Victoires TGV de Rabbi TAN à Hèvié, Abomey-Calavi. 9 divinités endogènes : LISSA, Lègba, Tohossou, Sakpata, Dan Ayidohouèdo, Hèviesso, Gou, Hooho, Assin. Cérémonie du Fâ par prêtres assermentés.">
-    <meta name="keywords" content="Temple des Grandes Victoires, TGV Hèvié, divinités vaudou bénin, LISSA, Lègba Minon Nan, Tohossou, Sakpata, Dan Ayidohouèdo, Hèviesso, Gou, Hooho, Assin, cérémonie Fâ, Rabbi TAN, protection spirituelle, Abomey-Calavi">
+    <title>Temple des Grandes Victoires TGV — Rabbi TAN | Divinités Endogènes Bénin</title>
+    <meta name="description" content="Découvrez le Temple des Grandes Victoires TGV de Rabbi TAN à Hèvié, Abomey-Calavi. Les divinités endogènes : Légba, Sègbolissa, Hooho, Minon Nan, Tohossou, Gou, Assin, Sègbo Lissa, Hèviesso, Dan Ayidohouèdo, Sakpata, Ange Sachiel. Cérémonie du Fâ par prêtres assermentés.">
+    <meta name="keywords" content="Temple des Grandes Victoires, TGV Hèvié, divinités vaudou bénin, Légba, Sègbolissa, Hooho, Minon Nan, Tohossou, Gou, Assin, Sègbo Lissa, Hèviesso, Dan Ayidohouèdo, Sakpata, Ange Sachiel, cérémonie Fâ, Rabbi TAN, protection spirituelle, Abomey-Calavi">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://dahmehourabbitan.vercel.app/temple.html">
-    <meta property="og:title" content="Temple des Grandes Victoires TGV —  Divinités Endogènes | Rabbi TAN">
+    <meta property="og:title" content="Temple des Grandes Victoires TGV — Divinités Endogènes | Rabbi TAN">
     <meta property="og:description" content="Divinités endogènes sous un même toit à Hèvié, Abomey-Calavi. Cérémonie du Fâ. Consultation spirituelle 24h/24.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="lissa.jpg">
+    <meta property="og:image" content="LEGBA.jpg">
+    <meta property="og:locale" content="fr_BJ">
+    <meta name="twitter:card" content="summary_large_image">
     <script type="application/ld+json">
     {
       "@context":"https://schema.org",
       "@type":"ReligiousOrganization",
-      "name":"Temple des Grandes Victoires — TGV",
-      "description":"Temple abritant  divinités endogènes béninoises. Consultation spirituelle, cérémonie du Fâ, protection.",
+      "name":"Temple des Grandes Victoires – TGV",
+      "description":"Temple abritant des divinités endogènes béninoises. Consultation spirituelle, cérémonie du Fâ, protection.",
       "address":{"@type":"PostalAddress","streetAddress":"Rue de l'école primaire Hèvié Adovié","addressLocality":"Abomey-Calavi","addressCountry":"BJ"},
       "telephone":"+2290194337878",
       "openingHours":"Mo-Su 00:00-23:59",
@@ -60,7 +62,7 @@
             -webkit-font-smoothing: antialiased;
         }
         a { color: inherit; text-decoration: none; }
-        img { display: block; max-width: 100%; height: auto; }
+        img { display: block; max-width: 100%; height: auto; object-fit: cover; }
         button { cursor: pointer; }
         ::selection { background: var(--blue); color: white; }
 
@@ -81,16 +83,13 @@
         @keyframes barFill { to { width:100% } }
         @keyframes barShimmer { 0%{background-position:0%} 100%{background-position:200%} }
 
-        /* CANVAS */
         #particleCanvas { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; opacity:0.3; }
 
-        /* WHATSAPP */
         .wa-float { position:fixed; bottom:30px; right:28px; z-index:500; width:58px; height:58px; border-radius:50%; background:linear-gradient(135deg, #128C7E, #25D366); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 24px rgba(37,211,102,.45); animation:waPulse 2.8s ease-in-out infinite; transition:transform .3s; }
         .wa-float:hover { transform:scale(1.12); }
         .wa-float svg { width:30px; height:30px; fill:white; }
         @keyframes waPulse { 0%,100%{ box-shadow:0 4px 24px rgba(37,211,102,.45) } 50%{ box-shadow:0 4px 32px rgba(37,211,102,.75),0 0 0 14px rgba(37,211,102,.07) } }
 
-        /* NAVBAR */
         #navbar { position:fixed; top:0; left:0; right:0; z-index:200; height:70px; padding:0 clamp(20px,4vw,60px); display:flex; align-items:center; justify-content:space-between; background:rgba(255,255,255,0.98); backdrop-filter:blur(10px); border-bottom:1px solid var(--border-light); }
         .nav-brand { font-family:var(--ff-title); font-size:1rem; font-weight:700; color:var(--blue); white-space:nowrap; }
         .nav-brand span { display:block; font-family:var(--ff-title); font-size:.55rem; letter-spacing:.2em; color:var(--red); }
@@ -114,19 +113,23 @@
             .nav-links a { font-size:1.1rem; }
         }
 
-        /* REVEAL */
         .reveal { opacity:0; transform:translateY(30px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
         .reveal.visible { opacity:1; transform:translate(0); }
 
-        /* SHARED SECTION */
         section { position:relative; z-index:1; }
         .section-inner { max-width:1200px; margin:0 auto; padding:clamp(60px,8vw,100px) clamp(20px,5vw,60px); }
+        .section-header { text-align:center; margin-bottom:50px; }
         .section-tag { font-family:var(--ff-title); font-size:.75rem; letter-spacing:.35em; text-transform:uppercase; color:var(--red); display:block; margin-bottom:12px; }
         .section-title { font-family:var(--ff-title); font-size:clamp(2rem,5vw,3rem); font-weight:900; color:var(--blue); margin-bottom:18px; line-height:1.2; }
-        .section-line { width:80px; height:2px; margin-bottom:22px; background:linear-gradient(90deg, var(--blue), var(--red)); }
+        .section-line { width:80px; height:2px; margin:0 auto 25px; background:linear-gradient(90deg, var(--blue), var(--red)); }
         .divider { display:flex; align-items:center; justify-content:center; gap:16px; padding:20px; }
         .divider-line { flex:1; max-width:200px; height:1px; background:linear-gradient(90deg, transparent, rgba(30,58,138,.2), transparent); }
         .divider-star { color:var(--gold); font-size:.9rem; letter-spacing:.4em; }
+
+        .btn-primary { display:inline-flex; align-items:center; gap:10px; padding:15px 35px; border-radius:3px; background:var(--violet); color:white; font-family:var(--ff-title); font-size:.8rem; letter-spacing:.18em; text-transform:uppercase; font-weight:600; transition:all .3s; border:none; }
+        .btn-primary:hover { background:var(--violet-mid); box-shadow:0 8px 25px rgba(124,58,237,.4); transform:translateY(-2px); }
+        .btn-secondary { display:inline-flex; align-items:center; gap:10px; padding:14px 30px; border-radius:3px; border:2px solid var(--gold); color:var(--blue); font-family:var(--ff-title); font-size:.8rem; letter-spacing:.18em; text-transform:uppercase; font-weight:600; transition:all .3s; }
+        .btn-secondary:hover { background:var(--gold); color:white; box-shadow:0 8px 20px rgba(212,175,55,.4); }
 
         /* PAGE HERO */
         .page-hero { min-height:54vh; display:flex; align-items:flex-end; position:relative; overflow:hidden; padding-top:70px; background:var(--gray-light); }
@@ -140,38 +143,25 @@
         .page-subtitle { font-family:var(--ff-title); font-size:1rem; letter-spacing:.15em; color:var(--red); text-transform:uppercase; margin-bottom:20px; }
         .page-deco-line { width:100px; height:2px; background:linear-gradient(90deg, var(--blue), var(--red)); }
 
-        /* BUTTONS */
-        .btn-primary { display:inline-flex; align-items:center; gap:10px; padding:15px 35px; border-radius:3px; background:var(--violet); color:white; font-family:var(--ff-title); font-size:.8rem; letter-spacing:.18em; text-transform:uppercase; font-weight:600; transition:all .3s; border:none; }
-        .btn-primary:hover { background:var(--violet-mid); box-shadow:0 8px 25px rgba(124,58,237,.4); transform:translateY(-2px); }
-        .btn-secondary { display:inline-flex; align-items:center; gap:10px; padding:14px 30px; border-radius:3px; border:2px solid var(--gold); color:var(--blue); font-family:var(--ff-title); font-size:.8rem; letter-spacing:.18em; text-transform:uppercase; font-weight:600; transition:all .3s; }
-        .btn-secondary:hover { background:var(--gold); color:white; box-shadow:0 8px 20px rgba(212,175,55,.4); }
-
         /* INTRO TEMPLE */
         #intro-temple { background:var(--white); }
         .intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,80px); align-items:center; }
         .intro-photo { position:relative; border-radius:4px; overflow:hidden; box-shadow:0 15px 30px rgba(0,0,0,0.08); }
         .intro-photo img { width:100%; aspect-ratio:4/3; object-fit:cover; transition:transform .6s; }
-        .intro-photo:hover img { transform:scale(1.04); }
         .intro-body { color:var(--text-soft); line-height:1.9; margin-bottom:18px; font-size:1rem; }
         .intro-body strong { color:var(--blue); }
         .intro-detail { display:flex; gap:12px; margin-bottom:14px; align-items:flex-start; }
-        .intro-detail-icon { flex-shrink:0; font-size:1rem; margin-top:3px; }
-        .intro-detail-text { color:var(--text-soft); font-size:.95rem; }
-        .intro-detail-text strong { color:var(--blue); }
-        @media(max-width:820px) { .intro-grid { grid-template-columns:1fr; } }
 
-        /* DIVINITES SECTION */
+        /* DIVINITES */
         #divinites { background:var(--gray-light); }
         .divinites-intro { text-align:center; max-width:700px; margin:0 auto clamp(44px,6vw,72px); color:var(--text-soft); font-size:1.05rem; line-height:1.82; }
-        .divinity-block { margin-bottom:clamp(60px,8vw,100px); }
-        .divinity-block:last-child { margin-bottom:0; }
+        .divinity-block { margin-bottom:clamp(60px,8vw,100px); background:var(--white); border-radius:8px; padding:clamp(30px,4vw,50px); box-shadow:var(--shadow); }
         .divinity-inner { display:grid; grid-template-columns:1fr 1fr; gap:clamp(36px,5vw,72px); align-items:center; }
-        .divinity-photo-col { position:relative; }
         .divinity-photo-main { position:relative; border-radius:4px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.08); }
-        .divinity-photo-main img { width:100%; aspect-ratio:4/5; object-fit:cover; transition:transform .65s var(--ease), filter .4s; }
+        .divinity-photo-main img { width:100%; aspect-ratio:4/5; object-fit:cover; transition:transform .65s var(--ease); }
         .divinity-photo-main:hover img { transform:scale(1.05); }
         .divinity-text { }
-        .divinity-num-label { font-family:var(--ff-title); font-size:.65rem; letter-spacing:.3em; text-transform:uppercase; color:var(--violet); margin-bottom:10px; display:block; }
+        .divinity-num-label { font-family:var(--ff-title); font-size:.65rem; letter-spacing:.3em; text-transform:uppercase; color:var(--violet); margin-bottom:10px; }
         .divinity-name { font-family:var(--ff-title); font-size:clamp(1.6rem,3.5vw,2.6rem); font-weight:900; color:var(--blue); margin-bottom:14px; line-height:1.2; }
         .divinity-role { font-family:var(--ff-title); font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; color:var(--red); margin-bottom:18px; font-style:italic; }
         .divinity-desc { color:var(--text-soft); line-height:1.9; margin-bottom:18px; font-size:1rem; }
@@ -179,29 +169,24 @@
         .divinity-traits { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
         .divinity-trait { padding:4px 14px; border-radius:20px; background:rgba(124,58,237,.08); border:1px solid rgba(124,58,237,.25); font-family:var(--ff-title); font-size:.58rem; letter-spacing:.12em; text-transform:uppercase; color:var(--violet); }
         .divinity-cta { display:inline-flex; align-items:center; gap:10px; padding:12px 24px; border-radius:3px; border:2px solid var(--gold); color:var(--blue); font-family:var(--ff-title); font-size:.68rem; letter-spacing:.15em; text-transform:uppercase; transition:all .35s; }
-        .divinity-cta:hover { background:var(--gold); color:white; box-shadow:0 8px 20px rgba(212,175,55,.4); }
-        .divinity-photo-secondary { margin-top:12px; border-radius:3px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.05); }
-        .divinity-photo-secondary img { width:100%; aspect-ratio:16/9; object-fit:cover; transition:transform .4s; }
-        .divinity-photo-secondary:hover img { transform:scale(1.03); }
+        .divinity-cta:hover { background:var(--gold); color:white; }
         @media(max-width:820px) {
             .divinity-inner { grid-template-columns:1fr; }
             .divinity-photo-main img { aspect-ratio:3/2; }
         }
 
-        /* FA CEREMONY */
+        /* FA */
         #fa { background:var(--white); }
         .fa-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,80px); align-items:center; }
         .fa-photo { position:relative; border-radius:4px; overflow:hidden; box-shadow:0 15px 30px rgba(0,0,0,0.08); }
         .fa-photo img { width:100%; aspect-ratio:1; object-fit:cover; transition:transform .6s; }
-        .fa-photo:hover img { transform:scale(1.04); }
         .fa-steps { display:flex; flex-direction:column; gap:18px; margin:24px 0; }
         .fa-step { display:flex; gap:16px; align-items:flex-start; }
         .fa-step-num { width:34px; height:34px; border-radius:50%; background:linear-gradient(135deg, var(--blue), var(--violet)); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:var(--ff-title); font-size:.72rem; color:white; flex-shrink:0; }
         .fa-step-text { color:var(--text-soft); font-size:.95rem; line-height:1.75; padding-top:6px; }
         .fa-step-text strong { color:var(--blue); }
-        @media(max-width:820px) { .fa-grid { grid-template-columns:1fr; } }
 
-        /* VISITE CTA */
+        /* VISITE */
         #visite { background:var(--gray-light); }
         .visite-inner { max-width:900px; margin:0 auto; text-align:center; }
         .visite-title { font-family:var(--ff-title); font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:var(--blue); margin-bottom:18px; }
@@ -238,7 +223,6 @@
     </style>
 </head>
 <body>
-
 <div id="loader">
     <div class="loader-logo">Rabbi TAN</div>
     <div class="loader-sub">DAH MÈHOU KPOTCHÈDJI</div>
@@ -266,7 +250,6 @@
     </ul>
 </header>
 
-<!-- PAGE HERO -->
 <div class="page-hero">
     <img class="page-hero-img" src="o.jpg" alt="Temple TGV" width="1920" height="600" onerror="this.style.display='none'">
     <div class="page-hero-overlay"></div>
@@ -278,18 +261,17 @@
     </div>
 </div>
 
-<!-- INTRO TEMPLE -->
 <section id="intro-temple">
     <div class="section-inner">
         <div class="intro-grid">
             <div class="intro-photo reveal">
-                <img src="o.jpg" alt="Temple TGV Rabbi TAN Hèvié" width="600" height="450" onerror="this.src='https://placehold.co/600x450/1E3A8A/FFFFFF?text=Temple+TGV'">
+                <img src="o.jpg" alt="Temple TGV" width="600" height="450" onerror="this.src='https://placehold.co/600x450/1E3A8A/FFFFFF?text=Temple+TGV'">
             </div>
             <div class="reveal">
                 <span class="section-tag">✦ Un Lieu Unique au Bénin</span>
                 <h2 class="section-title">Le Temple des Grandes Victoires</h2>
                 <div class="section-line"></div>
-                <p class="intro-body">Le <strong>Temple des Grandes Victoires</strong> — TGV — est un temple unique en son genre installé par DAH MèHOU KPOTCHÈDJI Rabbi TAN à <strong>Hèvié, Commune d'Abomey-Calavi</strong>. Il abrite sous un même toit <strong>9 grandes divinités endogènes</strong> de la tradition béninoise.</p>
+                <p class="intro-body">Le <strong>Temple des Grandes Victoires</strong> — TGV — est un temple unique en son genre installé par DAH MèHOU KPOTCHÈDJI Rabbi TAN à <strong>Hèvié, Commune d'Abomey-Calavi</strong>. Il abrite sous un même toit des <strong>divinités endogènes</strong> de la tradition béninoise.</p>
                 <p class="intro-body">L'objectif fondamental de ce temple est d'<strong>épargner les fidèles des attaques familiales</strong> qui surviennent souvent lorsqu'ils se rendent au village pour demander les bonnes grâces des divinités. Ici, tout est réuni en un seul endroit, en toute sécurité et sous la guidance du Grand Maître.</p>
                 <p class="intro-body">Confiez-vous à l'une des divinités et vous serez <strong>satisfait après quelques jours</strong>. La cérémonie du <strong>Fâ</strong> — marque du destin — est aussi officiée sur ce lieu sacré par des prêtres assermentés de cet art divinatoire.</p>
                 <div class="intro-detail"><span class="intro-detail-icon">📍</span><span class="intro-detail-text"><strong>Adresse :</strong> Rue de l'école primaire Hèvié Adovié, Abomey-Calavi, Bénin</span></div>
@@ -302,7 +284,6 @@
 
 <div class="divider"><div class="divider-line"></div><div class="divider-star">✦ ✦ ✦</div><div class="divider-line"></div></div>
 
-<!-- DIVINITES -->
 <section id="divinites">
     <div class="section-inner">
         <div class="divinites-intro reveal">
@@ -312,241 +293,301 @@
             <p>Chaque divinité présente au Temple possède une puissance, un domaine et des grâces spécifiques. Confier votre problème à la divinité appropriée garantit une réponse précise et des résultats concrets en quelques jours.</p>
         </div>
 
-        <!-- I — LISSA -->
-        <div class="divinity-block">
+        <!-- I — LÉGBA -->
+        <div class="divinity-block reveal">
             <div class="divinity-inner">
-                <div class="divinity-photo-col reveal">
-                    <div class="divinity-photo-main" onclick="openLightbox('lissa.jpg','LISSA')">
-                        <img src="lissa.jpg" alt="Divinité LISSA" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=LISSA'">
+                <div class="divinity-photo-col">
+                    <div class="divinity-photo-main" onclick="openLightbox('LEGBA.jpg','LÉGBA')">
+                        <img src="LEGBA.jpg" alt="LÉGBA" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=LEGBA'">
                     </div>
                 </div>
-                <div class="divinity-text reveal">
-                    <span class="divinity-num-label">Divinité I · Temple TGV</span>
-                    <h2 class="divinity-name">LISSA</h2>
-                    <div class="section-line" style="margin-bottom:20px;"></div>
-                    <div class="divinity-role">Divinité de la Pureté &amp; de la Lumière</div>
-                    <p class="divinity-desc">LISSA est l'une des divinités les plus puissantes et pures de la tradition vodoun béninoise. Associée à la <strong>lumière, la pureté et la prospérité</strong>, elle apporte clarté et sérénité à ceux qui se confient à elle.</p>
-                    <p class="divinity-desc">Ses grâces s'étendent sur la <strong>réussite dans les affaires</strong>, la protection de la famille et l'ouverture des voies bloquées. Elle est invoquée pour éclairer le chemin de ceux qui avancent dans l'obscurité.</p>
-                    <div class="divinity-traits">
-                        <span class="divinity-trait">Pureté</span>
-                        <span class="divinity-trait">Lumière</span>
-                        <span class="divinity-trait">Prospérité</span>
-                        <span class="divinity-trait">Protection</span>
-                    </div>
-                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20me%20confier%20à%20la%20divinité%20LISSA." target="_blank" rel="noopener" class="divinity-cta">💬 Se confier à LISSA →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- II — LEGBA -->
-        <div class="divinity-block">
-            <div class="divinity-inner">
-                
-            
-                <div class="divinity-text reveal">
-                    <span class="divinity-num-label">Divinité II · Temple TGV</span>
-                    <h2 class="divinity-name">Lègba Minon Nan</h2>
+                <div class="divinity-text">
+                    <span class="divinity-num-label">Divinité · Temple TGV</span>
+                    <h2 class="divinity-name">LÉGBA</h2>
                     <div class="section-line" style="margin-bottom:20px;"></div>
                     <div class="divinity-role">Divinité des Carrefours &amp; des Passages</div>
-                    <p class="divinity-desc">Lègba est le <strong>gardien des carrefours et des passages</strong>. Maître de la communication entre le monde des vivants et celui des esprits, il ouvre les portes fermées et facilite toutes les transitions importantes de la vie.</p>
-                    <p class="divinity-desc">Il est indispensable d'invoquer Lègba avant toute cérémonie spirituelle, car c'est lui qui permet la <strong>communication avec les autres divinités</strong> et qui débloque les situations les plus complexes.</p>
+                    <p class="divinity-desc">Légba est le <strong>gardien des carrefours et des passages</strong>. Maître de la communication entre le monde des vivants et celui des esprits, il ouvre les portes fermées et facilite toutes les transitions importantes de la vie.</p>
+                    <p class="divinity-desc">Il est indispensable d'invoquer Légba avant toute cérémonie spirituelle, car c'est lui qui permet la <strong>communication avec les autres divinités</strong> et qui débloque les situations les plus complexes.</p>
                     <div class="divinity-traits">
                         <span class="divinity-trait">Carrefours</span>
                         <span class="divinity-trait">Communication</span>
                         <span class="divinity-trait">Déblocage</span>
-                        <span class="divinity-trait">Passages</span>
                     </div>
-                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20une%20consultation%20avec%20Lègba%20Minon%20Nan." target="_blank" rel="noopener" class="divinity-cta">💬 Se confier à Lègba →</a>
+                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20me%20confier%20à%20LÉGBA." target="_blank" class="divinity-cta">💬 Se confier à LÉGBA →</a>
                 </div>
             </div>
         </div>
 
-        <!-- III — TOHOSSOU -->
-        <div class="divinity-block">
+        <!-- II — SÈGBOLISSA -->
+        <div class="divinity-block reveal">
             <div class="divinity-inner">
-                <div class="divinity-photo-col reveal">
-                    <div class="divinity-photo-main" onclick="openLightbox('tohossou.jpg','Tohossou')">
-                        <img src="tohossou.jpg" alt="Divinité Tohossou" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=Tohossou'">
+                <div class="divinity-photo-col">
+                    <div class="divinity-photo-main" onclick="openLightbox('SEGBOLISSA LISSA.jpg','SÈGBOLISSA')">
+                        <img src="SEGBOLISSA LISSA.jpg" alt="SÈGBOLISSA" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=SEGBOLISSA'">
                     </div>
                 </div>
-                <div class="divinity-text reveal">
-                    <span class="divinity-num-label">Divinité III · Temple TGV</span>
-                    <h2 class="divinity-name">Tohossou</h2>
+                <div class="divinity-text">
+                    <span class="divinity-num-label">Divinité · Temple TGV</span>
+                    <h2 class="divinity-name">SÈGBOLISSA</h2>
                     <div class="section-line" style="margin-bottom:20px;"></div>
-                    <div class="divinity-role">Divinité des Eaux &amp; de la Fécondité</div>
-                    <p class="divinity-desc">Tohossou est la <strong>divinité des eaux profondes</strong>. Associé à la fécondité, à la naissance et à la prospérité, il est particulièrement invoqué par les couples qui désirent des enfants et par ceux qui cherchent l'abondance dans leur vie.</p>
-                    <p class="divinity-desc">Sa puissance s'étend sur la <strong>guérison des maladies mystérieuses</strong> liées à l'eau et sur la protection des enfants. Il accorde ses grâces à ceux qui respectent ses codes et ses traditions.</p>
+                    <div class="divinity-role">Divinité Suprême de la Création</div>
+                    <p class="divinity-desc">Sègbolissa est une manifestation puissante de la divinité suprême. Il représente la <strong>création, la sagesse et la puissance divine</strong>. Sa présence au Temple TGV est un atout majeur pour tous ceux qui recherchent la guidance spirituelle la plus élevée.</p>
                     <div class="divinity-traits">
-                        <span class="divinity-trait">Fécondité</span>
-                        <span class="divinity-trait">Eaux</span>
-                        <span class="divinity-trait">Enfants</span>
-                        <span class="divinity-trait">Abondance</span>
+                        <span class="divinity-trait">Création</span>
+                        <span class="divinity-trait">Sagesse</span>
+                        <span class="divinity-trait">Puissance</span>
                     </div>
-                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20une%20consultation%20avec%20Tohossou." target="_blank" rel="noopener" class="divinity-cta">💬 Se confier à Tohossou →</a>
+                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20me%20confier%20à%20SÈGBOLISSA." target="_blank" class="divinity-cta">💬 Se confier à SÈGBOLISSA →</a>
                 </div>
             </div>
         </div>
 
-        <!-- IV — SAKPATA -->
-        <div class="divinity-block">
+        <!-- III — HOOO / HOOHO -->
+        <div class="divinity-block reveal">
             <div class="divinity-inner">
-                <div class="divinity-photo-col reveal">
-                    <div class="divinity-photo-main" onclick="openLightbox('sakpata.jpg','Sakpata')">
-                        <img src="sakpata.jpg" alt="Divinité Sakpata" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/8B5CF6?text=Sakpata'">
+                <div class="divinity-photo-col">
+                    <div class="divinity-photo-main" onclick="openLightbox('HOOHO.jpg','HOOO')">
+                        <img src="HOOHO.jpg" alt="HOOO" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=HOOO'">
                     </div>
                 </div>
-                <div class="divinity-text reveal">
-                    <span class="divinity-num-label">Divinité IV · Temple TGV</span>
-                    <h2 class="divinity-name">Sakpata</h2>
-                    <div class="section-line" style="margin-bottom:20px;"></div>
-                    <div class="divinity-role">Divinité de la Terre &amp; de la Santé</div>
-                    <p class="divinity-desc">Sakpata est le <strong>maître de la terre et des maladies</strong>. Divinité redoutée et respectée, il est à la fois celui qui envoie les maladies et celui qui les guérit. Il veille sur la santé des humains et sur la fertilité de la terre.</p>
-                    <p class="divinity-desc">Se confier à Sakpata permet d'obtenir une <strong>guérison des maladies de peau, des épidémies</strong> et des maux inexplicables. Il est également invoqué pour la protection contre les épidémies et les calamités naturelles.</p>
-                    <div class="divinity-traits">
-                        <span class="divinity-trait">Santé</span>
-                        <span class="divinity-trait">Terre</span>
-                        <span class="divinity-trait">Guérison</span>
-                        <span class="divinity-trait">Protection</span>
-                    </div>
-                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20une%20consultation%20avec%20Sakpata." target="_blank" rel="noopener" class="divinity-cta">💬 Se confier à Sakpata →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- V — DAN AYIDOHOUEEDO -->
-        <div class="divinity-block">
-            <div class="divinity-inner">
-                <div class="divinity-photo-col reveal">
-                    <div class="divinity-photo-main" onclick="openLightbox('dan1.jpg','Dan Ayidohouèdo')">
-                        <img src="dan1.jpg" alt="Divinité Dan Ayidohouèdo" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=Dan'">
-                    </div>
-                </div>
-                <div class="divinity-text reveal">
-                    <span class="divinity-num-label">Divinité V · Temple TGV</span>
-                    <h2 class="divinity-name">Dan Ayidohouèdo</h2>
-                    <div class="section-line" style="margin-bottom:20px;"></div>
-                    <div class="divinity-role">Divinité du Serpent Arc-en-Ciel &amp; de la Fortune</div>
-                    <p class="divinity-desc">Dan Ayidohouèdo est le <strong>serpent arc-en-ciel</strong>, l'une des divinités les plus emblématiques du panthéon vodoun. Symbole de richesse, de mouvement et de continuité, il représente l'énergie vitale qui traverse l'univers.</p>
-                    <p class="divinity-desc">Il est la divinité de la <strong>chance, de la fortune et du commerce</strong>. Ceux qui se confient à lui voient leurs affaires prospérer, leurs finances s'améliorer et leurs projets aboutir. Son pouvoir est immense et ses grâces, rapides.</p>
-                    <p class="divinity-desc" style="font-style:italic;border-left:3px solid var(--gold);padding-left:14px;color:var(--text-dark);">Cette divinité bénéficie de deux représentations sacrées au Temple TGV, témoignant de son importance particulière dans le panthéon de Rabbi TAN.</p>
-                    <div class="divinity-traits">
-                        <span class="divinity-trait">Fortune</span>
-                        <span class="divinity-trait">Commerce</span>
-                        <span class="divinity-trait">Chance</span>
-                        <span class="divinity-trait">Arc-en-Ciel</span>
-                        <span class="divinity-trait">Continuité</span>
-                    </div>
-                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20une%20consultation%20avec%20Dan%20Ayidohouèdo." target="_blank" rel="noopener" class="divinity-cta">💬 Se confier à Dan →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- VI — HEVIESSO -->
-        <div class="divinity-block">
-            <div class="divinity-inner">
-                <div class="divinity-photo-col reveal">
-                    <div class="divinity-photo-main" onclick="openLightbox('heviesso.jpg','Hèviesso')">
-                        <img src="heviesso.jpg" alt="Divinité Hèviesso" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/8B5CF6?text=Hèviesso'">
-                    </div>
-                </div>
-                <div class="divinity-text reveal">
-                    <span class="divinity-num-label">Divinité VI · Temple TGV</span>
-                    <h2 class="divinity-name">Hèviesso</h2>
-                    <div class="section-line" style="margin-bottom:20px;"></div>
-                    <div class="divinity-role">Divinité du Tonnerre &amp; de la Justice</div>
-                    <p class="divinity-desc">Hèviesso est le <strong>dieu du tonnerre et de la foudre</strong>. Divinité de la justice divine, il punit les injustes, protège les innocents et rétablit l'équilibre là où il a été rompu par la malveillance ou la tromperie.</p>
-                    <p class="divinity-desc">Il est invoqué pour obtenir <strong>justice contre les ennemis</strong>, se protéger de la trahison, et voir les mauvais sorts se retourner contre leurs auteurs. Sa colère est redoutable, mais sa protection est absolue pour ceux qui vivent dans la vérité.</p>
-                    <div class="divinity-traits">
-                        <span class="divinity-trait">Justice</span>
-                        <span class="divinity-trait">Tonnerre</span>
-                        <span class="divinity-trait">Protection</span>
-                        <span class="divinity-trait">Vérité</span>
-                    </div>
-                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20une%20consultation%20avec%20Hèviesso." target="_blank" rel="noopener" class="divinity-cta">💬 Se confier à Hèviesso →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- VII — GOU -->
-        <div class="divinity-block">
-            <div class="divinity-inner">
-                <div class="divinity-photo-col reveal">
-                    <div class="divinity-photo-main" onclick="openLightbox('gou.jpg','Gou')">
-                        <img src="gou.jpg" alt="Divinité Gou" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=Gou'">
-                    </div>
-                </div>
-                <div class="divinity-text reveal">
-                    <span class="divinity-num-label">Divinité VII · Temple TGV</span>
-                    <h2 class="divinity-name">Gou</h2>
-                    <div class="section-line" style="margin-bottom:20px;"></div>
-                    <div class="divinity-role">Divinité du Fer &amp; de la Guerre</div>
-                    <p class="divinity-desc">Gou est le <strong>maître du fer, des armes et des guerriers</strong>. Divinité des artisans, des forgeons et de tous ceux qui travaillent le métal, il confère force, courage et détermination à ceux qui invoquent sa puissance.</p>
-                    <p class="divinity-desc">Il protège dans les conflits, donne la <strong>force intérieure pour surmonter les épreuves</strong> et protège contre les accidents. Gou est aussi le gardien des travailleurs manuels et des entrepreneurs qui bâtissent avec leurs mains.</p>
-                    <div class="divinity-traits">
-                        <span class="divinity-trait">Force</span>
-                        <span class="divinity-trait">Courage</span>
-                        <span class="divinity-trait">Protection</span>
-                        <span class="divinity-trait">Travail</span>
-                    </div>
-                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20une%20consultation%20avec%20Gou." target="_blank" rel="noopener" class="divinity-cta">💬 Se confier à Gou →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- VIII — HOOHO -->
-        <div class="divinity-block">
-            <div class="divinity-inner">
-
-                <div class="divinity-text reveal">
-                    <span class="divinity-num-label">Divinité VIII · Temple TGV</span>
-                    <h2 class="divinity-name">Hooho</h2>
+                <div class="divinity-text">
+                    <span class="divinity-num-label">Divinité · Temple TGV</span>
+                    <h2 class="divinity-name">HOOO</h2>
                     <div class="section-line" style="margin-bottom:20px;"></div>
                     <div class="divinity-role">Divinité de la Chasse &amp; de la Nature</div>
-                    <p class="divinity-desc">Hooho est la <strong>divinité de la chasse, des forêts et de la nature sauvage</strong>. Gardien des secrets de la brousse et des plantes médicinales, il est le maître des guérisseurs et des herboristes traditionnels.</p>
+                    <p class="divinity-desc">Hooho (Hooo) est la <strong>divinité de la chasse, des forêts et de la nature sauvage</strong>. Gardien des secrets de la brousse et des plantes médicinales, il est le maître des guérisseurs et des herboristes traditionnels.</p>
                     <p class="divinity-desc">Il accorde ses grâces pour la <strong>réussite dans les entreprises</strong>, la protection lors des voyages en territoire inconnu et la révélation des secrets cachés. Sa connaissance des herbes sacrées est sans limite.</p>
                     <div class="divinity-traits">
                         <span class="divinity-trait">Chasse</span>
                         <span class="divinity-trait">Nature</span>
                         <span class="divinity-trait">Secrets</span>
-                        <span class="divinity-trait">Guérison</span>
                     </div>
-                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20une%20consultation%20avec%20Hooho." target="_blank" rel="noopener" class="divinity-cta">💬 Se confier à Hooho →</a>
+                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20me%20confier%20à%20HOOO." target="_blank" class="divinity-cta">💬 Se confier à HOOO →</a>
                 </div>
             </div>
         </div>
 
-        <!-- IX — ASSIN -->
-        <div class="divinity-block">
+        <!-- IV — MINON NAN -->
+        <div class="divinity-block reveal">
             <div class="divinity-inner">
-                <div class="divinity-photo-col reveal">
-                    <div class="divinity-photo-main" onclick="openLightbox('assin.jpg','Assin')">
-                        <img src="assin.jpg" alt="Divinité Assin" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=Assin'">
+                <div class="divinity-photo-col">
+                    <div class="divinity-photo-main" onclick="openLightbox('minonnan.jpg','MINON NAN')">
+                        <img src="minonnan.jpg" alt="MINON NAN" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=MINON+NAN'">
                     </div>
                 </div>
-                <div class="divinity-text reveal">
-                    <span class="divinity-num-label">Divinité IX · Temple TGV</span>
-                    <h2 class="divinity-name">Assin</h2>
+                <div class="divinity-text">
+                    <span class="divinity-num-label">Divinité · Temple TGV</span>
+                    <h2 class="divinity-name">MINON NAN</h2>
+                    <div class="section-line" style="margin-bottom:20px;"></div>
+                    <div class="divinity-role">Divinité de la Protection Familiale</div>
+                    <p class="divinity-desc">Minon Nan est une divinité protectrice des foyers et des familles. Elle veille sur la <strong>paix du ménage, l'harmonie et la descendance</strong>. Invoquez-la pour renforcer les liens familiaux et éloigner les disputes.</p>
+                    <div class="divinity-traits">
+                        <span class="divinity-trait">Famille</span>
+                        <span class="divinity-trait">Protection</span>
+                        <span class="divinity-trait">Harmonie</span>
+                    </div>
+                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20me%20confier%20à%20MINON%20NAN." target="_blank" class="divinity-cta">💬 Se confier à MINON NAN →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- V — TOHOSSOU -->
+        <div class="divinity-block reveal">
+            <div class="divinity-inner">
+                <div class="divinity-photo-col">
+                    <div class="divinity-photo-main" onclick="openLightbox('TOHOSSOU.jpg','TOHOSSOU')">
+                        <img src="TOHOSSOU.jpg" alt="TOHOSSOU" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=TOHOSSOU'">
+                    </div>
+                </div>
+                <div class="divinity-text">
+                    <span class="divinity-num-label">Divinité · Temple TGV</span>
+                    <h2 class="divinity-name">TOHOSSOU</h2>
+                    <div class="section-line" style="margin-bottom:20px;"></div>
+                    <div class="divinity-role">Divinité des Eaux &amp; de la Fécondité</div>
+                    <p class="divinity-desc">Tohossou est la <strong>divinité des eaux profondes</strong>. Associé à la fécondité, à la naissance et à la prospérité, il est particulièrement invoqué par les couples qui désirent des enfants et par ceux qui cherchent l'abondance dans leur vie.</p>
+                    <div class="divinity-traits">
+                        <span class="divinity-trait">Fécondité</span>
+                        <span class="divinity-trait">Eaux</span>
+                        <span class="divinity-trait">Enfants</span>
+                    </div>
+                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20me%20confier%20à%20TOHOSSOU." target="_blank" class="divinity-cta">💬 Se confier à TOHOSSOU →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- VI — GOU -->
+        <div class="divinity-block reveal">
+            <div class="divinity-inner">
+                <div class="divinity-photo-col">
+                    <div class="divinity-photo-main" onclick="openLightbox('GOU.jpg','GOU')">
+                        <img src="GOU.jpg" alt="GOU" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=GOU'">
+                    </div>
+                </div>
+                <div class="divinity-text">
+                    <span class="divinity-num-label">Divinité · Temple TGV</span>
+                    <h2 class="divinity-name">GOU</h2>
+                    <div class="section-line" style="margin-bottom:20px;"></div>
+                    <div class="divinity-role">Divinité du Fer &amp; de la Guerre</div>
+                    <p class="divinity-desc">Gou est le <strong>maître du fer, des armes et des guerriers</strong>. Divinité des artisans, des forgerons et de tous ceux qui travaillent le métal, il confère force, courage et détermination à ceux qui invoquent sa puissance.</p>
+                    <div class="divinity-traits">
+                        <span class="divinity-trait">Force</span>
+                        <span class="divinity-trait">Courage</span>
+                        <span class="divinity-trait">Protection</span>
+                    </div>
+                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20me%20confier%20à%20GOU." target="_blank" class="divinity-cta">💬 Se confier à GOU →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- VII — ASSIN -->
+        <div class="divinity-block reveal">
+            <div class="divinity-inner">
+                <div class="divinity-photo-col">
+                    <div class="divinity-photo-main" onclick="openLightbox('ASSIN.jpg','ASSIN')">
+                        <img src="ASSIN.jpg" alt="ASSIN" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=ASSIN'">
+                    </div>
+                </div>
+                <div class="divinity-text">
+                    <span class="divinity-num-label">Divinité · Temple TGV</span>
+                    <h2 class="divinity-name">ASSIN</h2>
                     <div class="section-line" style="margin-bottom:20px;"></div>
                     <div class="divinity-role">Divinité des Ancêtres &amp; de la Mémoire</div>
                     <p class="divinity-desc">Assin est le <strong>lien sacré entre les vivants et les ancêtres</strong>. Représenté sous forme d'autel portable, il symbolise la continuité entre les générations et permet aux vivants de communiquer avec leurs défunts bien-aimés.</p>
-                    <p class="divinity-desc">Se confier à Assin permet d'obtenir la <strong>bénédiction des ancêtres</strong>, de se réconcilier avec les morts, de purifier une lignée familiale troublée et de recevoir la sagesse ancestrale pour guider les décisions importantes de la vie.</p>
                     <div class="divinity-traits">
                         <span class="divinity-trait">Ancêtres</span>
                         <span class="divinity-trait">Mémoire</span>
                         <span class="divinity-trait">Bénédiction</span>
-                        <span class="divinity-trait">Réconciliation</span>
                     </div>
-                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20une%20consultation%20avec%20Assin." target="_blank" rel="noopener" class="divinity-cta">💬 Se confier à Assin →</a>
+                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20me%20confier%20à%20ASSIN." target="_blank" class="divinity-cta">💬 Se confier à ASSIN →</a>
                 </div>
             </div>
         </div>
 
+        <!-- VIII — SÉGBO LISSA -->
+        <div class="divinity-block reveal">
+            <div class="divinity-inner">
+                <div class="divinity-photo-col">
+                    <div class="divinity-photo-main" onclick="openLightbox('LISSA.jpg','SÉGBO LISSA')">
+                        <img src="LISSA.jpg" alt="SÉGBO LISSA" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=SEGBO+LISSA'">
+                    </div>
+                </div>
+                <div class="divinity-text">
+                    <span class="divinity-num-label">Divinité · Temple TGV</span>
+                    <h2 class="divinity-name">SÉGBO LISSA</h2>
+                    <div class="section-line" style="margin-bottom:20px;"></div>
+                    <div class="divinity-role">Divinité de la Pureté &amp; de la Lumière</div>
+                    <p class="divinity-desc">Sègbo Lissa est l'une des divinités les plus pures et puissantes de la tradition vodoun. Associée à la <strong>lumière, la pureté et la prospérité</strong>, elle apporte clarté et sérénité à ceux qui se confient à elle.</p>
+                    <div class="divinity-traits">
+                        <span class="divinity-trait">Pureté</span>
+                        <span class="divinity-trait">Lumière</span>
+                        <span class="divinity-trait">Prospérité</span>
+                    </div>
+                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20me%20confier%20à%20SÉGBO%20LISSA." target="_blank" class="divinity-cta">💬 Se confier à SÉGBO LISSA →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- IX — HÉVIESSO -->
+        <div class="divinity-block reveal">
+            <div class="divinity-inner">
+                <div class="divinity-photo-col">
+                    <div class="divinity-photo-main" onclick="openLightbox('HEVIESSO.jpg','HÉVIESSO')">
+                        <img src="HEVIESSO.jpg" alt="HÉVIESSO" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=HEVIESSO'">
+                    </div>
+                </div>
+                <div class="divinity-text">
+                    <span class="divinity-num-label">Divinité · Temple TGV</span>
+                    <h2 class="divinity-name">HÉVIESSO</h2>
+                    <div class="section-line" style="margin-bottom:20px;"></div>
+                    <div class="divinity-role">Divinité du Tonnerre &amp; de la Justice</div>
+                    <p class="divinity-desc">Hèviesso est le <strong>dieu du tonnerre et de la foudre</strong>. Divinité de la justice divine, il punit les injustes, protège les innocents et rétablit l'équilibre là où il a été rompu par la malveillance ou la tromperie.</p>
+                    <div class="divinity-traits">
+                        <span class="divinity-trait">Justice</span>
+                        <span class="divinity-trait">Tonnerre</span>
+                        <span class="divinity-trait">Vérité</span>
+                    </div>
+                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20me%20confier%20à%20HÉVIESSO." target="_blank" class="divinity-cta">💬 Se confier à HÉVIESSO →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- X — DAN AYIDOHOUËDO -->
+        <div class="divinity-block reveal">
+            <div class="divinity-inner">
+                <div class="divinity-photo-col">
+                    <div class="divinity-photo-main" onclick="openLightbox('DAN AYIDOHOUEDO.jpg','DAN AYIDOHOUËDO')">
+                        <img src="DAN AYIDOHOUEDO.jpg" alt="DAN AYIDOHOUËDO" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=DAN'">
+                    </div>
+                </div>
+                <div class="divinity-text">
+                    <span class="divinity-num-label">Divinité · Temple TGV</span>
+                    <h2 class="divinity-name">DAN AYIDOHOUËDO</h2>
+                    <div class="section-line" style="margin-bottom:20px;"></div>
+                    <div class="divinity-role">Divinité du Serpent Arc-en-Ciel &amp; de la Fortune</div>
+                    <p class="divinity-desc">Dan Ayidohouèdo est le <strong>serpent arc-en-ciel</strong>, symbole de richesse, de mouvement et de continuité. Il représente l'énergie vitale qui traverse l'univers et apporte la <strong>chance, la fortune et la prospérité</strong> à ceux qui l'invoquent.</p>
+                    <div class="divinity-traits">
+                        <span class="divinity-trait">Fortune</span>
+                        <span class="divinity-trait">Commerce</span>
+                        <span class="divinity-trait">Chance</span>
+                    </div>
+                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20me%20confier%20à%20DAN%20AYIDOHOUËDO." target="_blank" class="divinity-cta">💬 Se confier à DAN →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- XI — SAKPATA -->
+        <div class="divinity-block reveal">
+            <div class="divinity-inner">
+                <div class="divinity-photo-col">
+                    <div class="divinity-photo-main" onclick="openLightbox('SAKPATA.jpg','SAKPATA')">
+                        <img src="SAKPATA.jpg" alt="SAKPATA" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=SAKPATA'">
+                    </div>
+                </div>
+                <div class="divinity-text">
+                    <span class="divinity-num-label">Divinité · Temple TGV</span>
+                    <h2 class="divinity-name">SAKPATA</h2>
+                    <div class="section-line" style="margin-bottom:20px;"></div>
+                    <div class="divinity-role">Divinité de la Terre &amp; de la Santé</div>
+                    <p class="divinity-desc">Sakpata est le <strong>maître de la terre et des maladies</strong>. Divinité redoutée et respectée, il est à la fois celui qui envoie les maladies et celui qui les guérit. Il veille sur la santé des humains et sur la fertilité de la terre.</p>
+                    <div class="divinity-traits">
+                        <span class="divinity-trait">Santé</span>
+                        <span class="divinity-trait">Terre</span>
+                        <span class="divinity-trait">Guérison</span>
+                    </div>
+                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20me%20confier%20à%20SAKPATA." target="_blank" class="divinity-cta">💬 Se confier à SAKPATA →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- XII — ANGE SACHIEL -->
+        <div class="divinity-block reveal">
+            <div class="divinity-inner">
+                <div class="divinity-photo-col">
+                    <div class="divinity-photo-main" onclick="openLightbox('ange.jpg','ANGE SACHIEL')">
+                        <img src="ange.jpg" alt="ANGE SACHIEL" width="400" height="500" onerror="this.src='https://placehold.co/400x500/1E3A8A/D4AF37?text=ANGE+SACHIEL'">
+                    </div>
+                </div>
+                <div class="divinity-text">
+                    <span class="divinity-num-label">Divinité · Temple TGV</span>
+                    <h2 class="divinity-name">ANGE SACHIEL</h2>
+                    <div class="section-line" style="margin-bottom:20px;"></div>
+                    <div class="divinity-role">Ange de l'Abondance Financière</div>
+                    <p class="divinity-desc">L'<strong>Ange Sachiel</strong> est invoqué pour attirer l'abondance financière et la prospérité. Il est lié à <strong>Sègbolissa</strong> et sa puissance est amplifiée par cette connexion sacrée.</p>
+                    <p class="divinity-desc"><strong>À prier les jeudis pour l'abondance financière.</strong> Faites un tour au Temple TGV entre <strong>9h et 18h</strong> pour bénéficier pleinement de ses grâces.</p>
+                    <div class="divinity-traits">
+                        <span class="divinity-trait">Abondance</span>
+                        <span class="divinity-trait">Finance</span>
+                        <span class="divinity-trait">Prospérité</span>
+                    </div>
+                    <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20une%20consultation%20avec%20l'Ange%20Sachiel." target="_blank" class="divinity-cta">💬 Se confier à l'Ange Sachiel →</a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
 <div class="divider"><div class="divider-line"></div><div class="divider-star">✦ ✦ ✦</div><div class="divider-line"></div></div>
 
-<!-- CEREMONIE FA -->
 <section id="fa">
     <div class="section-inner">
         <div class="fa-grid">
@@ -584,7 +625,6 @@
 
 <div class="divider"><div class="divider-line"></div><div class="divider-star">✦ ✦ ✦</div><div class="divider-line"></div></div>
 
-<!-- VISITE CTA -->
 <section id="visite">
     <div class="section-inner">
         <div class="visite-inner reveal">
@@ -616,7 +656,6 @@
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <div class="footer-grid">
         <div class="footer-col">
@@ -688,13 +727,10 @@
         }
         draw();
     })();
-
     function toggleNav(){document.getElementById('navToggle').classList.toggle('open');document.getElementById('navLinks').classList.toggle('open');}
-
     const reveals=document.querySelectorAll('.reveal');
     const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.12});
     reveals.forEach(r=>obs.observe(r));
-
     function openLightbox(src,alt){
         const lb=document.getElementById('lightbox'),img=document.getElementById('lightboxImg');
         img.src=src;img.alt=alt||'';
