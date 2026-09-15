@@ -1,38 +1,372 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ============ 1. ACCUEIL ============ -->
   <url>
-    <loc>https://dahmehourabbitan.vercel.app/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://dahmehourabbitan.com/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dahmehourabbitan.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dahmehourabbitan.com/"/>
+
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/a.jpg</image:loc>
+      <image:title>Portrait officiel de Rabbi TAN</image:title>
+      <image:caption>Portrait officiel de Rabbi TAN, Grand Maître Voyant et Astrologue international</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/b.jpg</image:loc>
+      <image:title>Rabbi TAN en tenue traditionnelle</image:title>
+      <image:caption>Rabbi TAN, Dignitaire Royal du Palais d'Allada</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/c.jpg</image:loc>
+      <image:title>Temple des Grandes Victoires</image:title>
+      <image:caption>Temple des Grandes Victoires TGV à Hèvié, Bénin</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/d.jpg</image:loc>
+      <image:title>Cérémonie spirituelle Rabbi TAN</image:title>
+      <image:caption>Rabbi TAN dirigeant une cérémonie spirituelle traditionnelle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/e.jpg</image:loc>
+      <image:title>Consultation spirituelle</image:title>
+      <image:caption>Rabbi TAN en consultation spirituelle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/f.jpg</image:loc>
+      <image:title>Intronisation royale Allada</image:title>
+      <image:caption>Intronisation de Rabbi TAN au Palais Royal d'Allada</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/g.jpg</image:loc>
+      <image:title>Cérémonie du Fâ</image:title>
+      <image:caption>Cérémonie du Fâ au Temple des Grandes Victoires</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/h.jpg</image:loc>
+      <image:title>Rabbi TAN en méditation</image:title>
+      <image:caption>Rabbi TAN en méditation spirituelle au Temple TGV</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/i.jpg</image:loc>
+      <image:title>Divinités endogènes du Temple</image:title>
+      <image:caption>Divinités endogènes abritées au Temple des Grandes Victoires</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/j.jpg</image:loc>
+      <image:title>Rituel de prospérité</image:title>
+      <image:caption>Rituel de prospérité conduit par Rabbi TAN</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/k.jpg</image:loc>
+      <image:title>Rabbi TAN et ses fidèles</image:title>
+      <image:caption>Rabbi TAN entouré de ses fidèles au Temple TGV</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/l.jpg</image:loc>
+      <image:title>Rabbi TAN à la radio</image:title>
+      <image:caption>Rabbi TAN lors d'une émission sur Radio HWENDOHO</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/m.jpg</image:loc>
+      <image:title>Voyage spirituel</image:title>
+      <image:caption>Rabbi TAN lors d'un voyage spirituel en Europe</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/n.jpg</image:loc>
+      <image:title>Rencontre avec les dignitaires</image:title>
+      <image:caption>Rabbi TAN avec des dignitaires royaux du Bénin</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/o.jpg</image:loc>
+      <image:title>Cérémonie de bénédiction</image:title>
+      <image:caption>Rabbi TAN lors d'une cérémonie de bénédiction au Temple TGV</image:caption>
+    </image:image>
   </url>
+
+  <!-- ============ 2. BIOGRAPHIE ============ -->
   <url>
-    <loc>https://dahmehourabbitan.vercel.app/biographie.html</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://dahmehourabbitan.com/biographie.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dahmehourabbitan.com/biographie.html"/>
+
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/a.jpg</image:loc>
+      <image:title>Portrait officiel de Rabbi TAN</image:title>
+      <image:caption>Portrait officiel de Rabbi TAN pour sa biographie</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/b.jpg</image:loc>
+      <image:title>Rabbi TAN en tenue royale</image:title>
+      <image:caption>Rabbi TAN en tenue de dignitaire royal d'Allada</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ============ 3. SERVICES ============ -->
+  <url>
+    <loc>https://dahmehourabbitan.com/services.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dahmehourabbitan.com/services.html"/>
+
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/h.jpg</image:loc>
+      <image:title>Consultation spirituelle</image:title>
+      <image:caption>Consultation spirituelle avec Rabbi TAN</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/o.jpg</image:loc>
+      <image:title>Rituel de voyance</image:title>
+      <image:caption>Rituel de voyance conduit par Rabbi TAN</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/m.jpg</image:loc>
+      <image:title>Rituel d'amour</image:title>
+      <image:caption>Rituel d'amour et de retour d'affection</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/j.jpg</image:loc>
+      <image:title>Rituel de prospérité</image:title>
+      <image:caption>Rituel de réussite financière et de prospérité</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ============ 4. TEMPLE TGV + 12 DIVINITÉS ============ -->
+  <url>
+    <loc>https://dahmehourabbitan.com/temple.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dahmehourabbitan.com/temple.html"/>
+
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/o.jpg</image:loc>
+      <image:title>Temple des Grandes Victoires TGV</image:title>
+      <image:caption>Vue du Temple des Grandes Victoires à Hèvié, Abomey-Calavi</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/LEGBA.jpg</image:loc>
+      <image:title>Divinité Légba</image:title>
+      <image:caption>Divinité Légba, gardienne des carrefours et passages</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/SEGBOLISSA%20LISSA.jpg</image:loc>
+      <image:title>Divinité Sègbolissa</image:title>
+      <image:caption>Divinité Sègbolissa, manifestation de la divinité suprême</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/HOOHO.jpg</image:loc>
+      <image:title>Divinité Hohoo</image:title>
+      <image:caption>Divinité Hohoo, esprits des jumeaux et déblocage des situations</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/minonnan.jpg</image:loc>
+      <image:title>Divinité Minon Nan</image:title>
+      <image:caption>Divinité Minon Nan, Déesse Mère protectrice de la famille</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/TOHOSSOU.jpg</image:loc>
+      <image:title>Divinité Tohossou</image:title>
+      <image:caption>Divinité Tohossou, maîtresse des eaux et de la fécondité</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/GOU.jpg</image:loc>
+      <image:title>Divinité Gou</image:title>
+      <image:caption>Divinité Gou, maître du fer et de la guerre</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/ASSIN.jpg</image:loc>
+      <image:title>Divinité Assin</image:title>
+      <image:caption>Divinité Assin, lien sacré avec les ancêtres</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/LISSA.jpg</image:loc>
+      <image:title>Divinité Sègbo Lissa</image:title>
+      <image:caption>Divinité Sègbo Lissa, pureté, lumière et prospérité</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/HEVIESSO.jpg</image:loc>
+      <image:title>Divinité Hèviesso</image:title>
+      <image:caption>Divinité Hèviesso, dieu du tonnerre et de la justice</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/DAN%20AYIDOHOUEDO.jpg</image:loc>
+      <image:title>Divinité Dan Ayidohouèdo</image:title>
+      <image:caption>Divinité Dan Ayidohouèdo, serpent arc-en-ciel et fortune</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/SAKPATA.jpg</image:loc>
+      <image:title>Divinité Sakpata</image:title>
+      <image:caption>Divinité Sakpata, maîtresse de la terre et de la santé</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/ange.jpg</image:loc>
+      <image:title>Ange Sachiel</image:title>
+      <image:caption>Ange Sachiel, ange de l'abondance financière</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/h.jpg</image:loc>
+      <image:title>Cérémonie du Fâ</image:title>
+      <image:caption>Cérémonie du Fâ au Temple des Grandes Victoires</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ============ 5. BOUTIQUE ============ -->
+  <url>
+    <loc>https://dahmehourabbitan.com/boutique.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dahmehourabbitan.com/boutique.html"/>
+
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/b1.jpeg</image:loc>
+      <image:title>Produit spirituel Rabbi TAN</image:title>
+      <image:caption>Talisman spirituel de Rabbi TAN</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/b2.jpeg</image:loc>
+      <image:title>Parfum spirituel de chance</image:title>
+      <image:caption>Parfum spirituel pour attirer la chance</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/b3.jpeg</image:loc>
+      <image:title>Savon de purification</image:title>
+      <image:caption>Savon spirituel de purification et de protection</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/b4.jpeg</image:loc>
+      <image:title>Bague de protection</image:title>
+      <image:caption>Bague spirituelle de protection contre les attaques</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ============ 6. GALERIE ============ -->
+  <url>
+    <loc>https://dahmehourabbitan.com/galerie.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dahmehourabbitan.com/galerie.html"/>
+
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/a.jpg</image:loc>
+      <image:title>Portrait officiel de Rabbi TAN</image:title>
+      <image:caption>Portrait officiel de Rabbi TAN</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/b.jpg</image:loc>
+      <image:title>Rabbi TAN en tenue traditionnelle</image:title>
+      <image:caption>Rabbi TAN en tenue traditionnelle béninoise</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/c.jpg</image:loc>
+      <image:title>Cérémonie spirituelle</image:title>
+      <image:caption>Rabbi TAN dirigeant une cérémonie spirituelle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/d.jpg</image:loc>
+      <image:title>Rituel au Temple TGV</image:title>
+      <image:caption>Rituel spirituel au Temple des Grandes Victoires</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/e.jpg</image:loc>
+      <image:title>Consultation spirituelle</image:title>
+      <image:caption>Rabbi TAN en consultation spirituelle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/f.jpg</image:loc>
+      <image:title>Intronisation royale</image:title>
+      <image:caption>Intronisation de Rabbi TAN au Palais Royal d'Allada</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/g.jpg</image:loc>
+      <image:title>Cérémonie du Fâ</image:title>
+      <image:caption>Cérémonie du Fâ par Rabbi TAN</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/h.jpg</image:loc>
+      <image:title>Rabbi TAN en méditation</image:title>
+      <image:caption>Rabbi TAN en méditation spirituelle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/i.jpg</image:loc>
+      <image:title>Divinités du Temple</image:title>
+      <image:caption>Divinités endogènes du Temple TGV</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/j.jpg</image:loc>
+      <image:title>Rituel de prospérité</image:title>
+      <image:caption>Rituel de prospérité par Rabbi TAN</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/k.jpg</image:loc>
+      <image:title>Rabbi TAN et ses fidèles</image:title>
+      <image:caption>Rabbi TAN entouré de ses fidèles</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/l.jpg</image:loc>
+      <image:title>Rabbi TAN à la radio</image:title>
+      <image:caption>Rabbi TAN sur Radio HWENDOHO</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/m.jpg</image:loc>
+      <image:title>Voyage spirituel</image:title>
+      <image:caption>Rabbi TAN lors d'un voyage spirituel</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/n.jpg</image:loc>
+      <image:title>Dignitaires royaux</image:title>
+      <image:caption>Rabbi TAN avec des dignitaires royaux du Bénin</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/o.jpg</image:loc>
+      <image:title>Cérémonie de bénédiction</image:title>
+      <image:caption>Rabbi TAN lors d'une cérémonie de bénédiction</image:caption>
+    </image:image>
   </url>
+
+  <!-- ============ 7. RADIO HWENDOHO ============ -->
   <url>
-    <loc>https://dahmehourabbitan.vercel.app/temple.html</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://dahmehourabbitan.com/radio.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dahmehourabbitan.com/radio.html"/>
+
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/h.jpg</image:loc>
+      <image:title>Radio HWENDOHO</image:title>
+      <image:caption>Radio HWENDOHO, la voix de la culture béninoise</image:caption>
+    </image:image>
   </url>
+
+  <!-- ============ 8. CONTACT ============ -->
   <url>
-    <loc>https://dahmehourabbitan.vercel.app/services.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <priority>0.8</priority>
+    <loc>https://dahmehourabbitan.com/contact.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dahmehourabbitan.com/contact.html"/>
+
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/g.jpg</image:loc>
+      <image:title>Contact Rabbi TAN</image:title>
+      <image:caption>Contacter Rabbi TAN pour une consultation spirituelle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dahmehourabbitan.com/h.jpg</image:loc>
+      <image:title>Rabbi TAN</image:title>
+      <image:caption>Rabbi TAN, Grand Maître Voyant International</image:caption>
+    </image:image>
   </url>
-  <url>
-    <loc>https://dahmehourabbitan.vercel.app/galerie.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://dahmehourabbitan.vercel.app/radio.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://dahmehourabbitan.vercel.app/contact.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <priority>0.7</priority>
-  </url>
+
 </urlset>
