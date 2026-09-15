@@ -1,2 +1,48 @@
+# ==========================================================
+#  robots.txt — https://dahmehourabbitan.com/
+#  Site officiel de Rabbi TAN — DAH MÈHOU KPOTCHÈDJI
+# ==========================================================
+
+# Autoriser tous les robots par défaut
 User-agent: *
 Allow: /
+
+# ============ Bloquer les dossiers techniques (si existants) ============
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /*?s=
+Disallow: /*?utm_
+Disallow: /*?fbclid=
+
+# ============ Autoriser explicitement Google Images ============
+User-agent: Googlebot-Image
+Allow: /
+
+# ============ Autoriser Google AdSense (si utilisé) ============
+User-agent: Mediapartners-Google
+Allow: /
+
+# ============ Autoriser Googlebot News (utile pour blog) ============
+User-agent: Googlebot-News
+Allow: /
+
+# ============ Bloquer les scrapers connus (protection contenu) ============
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: DotBot
+Crawl-delay: 10
+
+# ============ Sitemap ============
+Sitemap: https://dahmehourabbitan.com/sitemap.xml
+
+# ============ Host (pour Google) ============
+Host: https://dahmehourabbitan.com
