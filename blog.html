@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blog — Enseignements & Sagesse | Rabbi TAN</title>
+<meta name="description" content="Le blog spirituel de Rabbi TAN : enseignements, sagesse ancestrale, secrets du Fâ et traditions endogènes béninoises."/>
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dahmehourabbitan.com/blog.html">
+<meta property="og:title" content="Blog — Rabbi TAN">
+<meta property="og:description" content="Enseignements spirituels, sagesse ancestrale et traditions endogènes.">
+<meta property="og:image" content="https://dahmehourabbitan.com/a.jpg">
+<meta property="og:url" content="https://dahmehourabbitan.com/blog.html">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1E3A8A">
+<link rel="icon" type="image/jpeg" href="a.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --blue:#1E3A8A;--blue-dark:#0F2557;--blue-light:#2b52c4;
+  --red:#DC2626;--violet:#7C3AED;--violet-mid:#6D28D9;
+  --gold:#D4AF37;--gold-light:#F5D67B;--black:#0F0F0F;
+  --white:#FFFFFF;--offwhite:#F9F9FB;--gray-light:#F3F4F6;
+  --text-dark:#1A1A1A;--text-soft:#2D3748;
+  --border:rgba(30,58,138,0.13);
+  --shadow:0 8px 25px rgba(0,0,0,0.05);
+  --ff-title:'Cinzel',serif;--ff-body:'Lato',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--offwhite);color:var(--text-dark);font-family:var(--ff-body);font-size:17px;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;height:auto;object-fit:cover;}
+button{cursor:pointer;}
+::selection{background:var(--blue);color:white;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:3px;}
+
+.skip-link{position:absolute;left:-9999px;top:0;z-index:10000;background:var(--blue);color:#fff;padding:12px 20px;font-family:var(--ff-title);font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;}
+.skip-link:focus{left:0;}
+
+#loader{position:fixed;inset:0;z-index:9999;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:20px;transition:opacity .8s var(--ease),visibility .8s var(--ease);}
+#loader.hidden{opacity:0;visibility:hidden;pointer-events:none;}
+.loader-logo{font-family:var(--ff-title);font-size:clamp(2rem,5vw,3.4rem);font-weight:900;letter-spacing:.07em;background:linear-gradient(135deg,var(--red),var(--blue),var(--violet),var(--gold));background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:rainbowShift 2.5s ease infinite;}
+.loader-sub{font-family:var(--ff-title);font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--blue);}
+.loader-line{width:50px;height:1px;background:var(--gold);margin:0 auto;}
+.loader-tagline{font-family:var(--ff-title);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-soft);}
+.loader-bar-wrap{width:260px;height:2px;background:rgba(0,0,0,0.06);border-radius:2px;overflow:hidden;}
+.loader-bar{height:100%;width:0;border-radius:2px;background:linear-gradient(90deg,var(--blue),var(--red),var(--violet));background-size:200% 100%;animation:barFill 1.8s var(--ease) forwards,barShimmer 1.2s linear infinite;}
+@keyframes rainbowShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes barFill{to{width:100%}}
+@keyframes barShimmer{0%{background-position:0%}100%{background-position:200%}}
+
+#particleCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.3;}
+
+.wa-float{position:fixed;bottom:30px;right:28px;z-index:500;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#128C7E,#25D366);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,.45);animation:waPulse 2.8s ease-in-out infinite;transition:transform .3s;}
+.wa-float:hover{transform:scale(1.12);}
+.wa-float svg{width:30px;height:30px;fill:white;}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 24px rgba(37,211,102,.45)}50%{box-shadow:0 4px 32px rgba(37,211,102,.75),0 0 0 14px rgba(37,211,102,.07)}}
+
+#navbar{position:fixed;top:0;left:0;right:0;z-index:200;height:70px;padding:0 clamp(20px,4vw,60px);display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.98);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+.nav-brand{font-family:var(--ff-title);font-size:1rem;font-weight:700;color:var(--blue);white-space:nowrap;}
+.nav-brand span{display:block;font-family:var(--ff-title);font-size:.55rem;letter-spacing:.2em;color:var(--red);}
+.nav-links{display:flex;align-items:center;gap:clamp(12px,1.8vw,26px);list-style:none;}
+.nav-links a{font-family:var(--ff-title);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-dark);font-weight:600;padding-bottom:3px;position:relative;transition:color .3s;white-space:nowrap;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transition:transform .3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--red);}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+.nav-cta{background:var(--violet)!important;color:white!important;padding:10px 22px!important;border-radius:2px;font-weight:600;}
+.nav-cta::after{display:none!important;}
+.nav-cta:hover{box-shadow:0 0 18px rgba(124,58,237,.5);}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;}
+.nav-toggle span{display:block;width:26px;height:3px;background:var(--blue);border-radius:2px;transition:all .3s;}
+.nav-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+.nav-toggle.open span:nth-child(2){opacity:0;}
+.nav-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+@media(max-width:1100px){
+  .nav-toggle{display:flex;}
+  .nav-links{position:fixed;top:70px;left:0;right:0;bottom:0;flex-direction:column;justify-content:center;gap:24px;background:white;transform:translateX(-100%);transition:transform .4s var(--ease);overflow-y:auto;padding:40px 20px;}
+  .nav-links.open{transform:translateX(0);}
+  .nav-links a{font-size:1.05rem;}
+}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+.reveal.visible{opacity:1;transform:translate(0);}
+section{position:relative;z-index:1;}
+.section-inner{max-width:1200px;margin:0 auto;padding:clamp(60px,8vw,100px) clamp(20px,5vw,60px);}
+.section-header{text-align:center;margin-bottom:50px;}
+.section-tag{font-family:var(--ff-title);font-size:.75rem;letter-spacing:.35em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:12px;}
+.section-title{font-family:var(--ff-title);font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--blue);margin-bottom:18px;line-height:1.2;}
+.section-line{width:80px;height:2px;margin:0 auto 25px;background:linear-gradient(90deg,var(--blue),var(--red));}
+.divider{display:flex;align-items:center;justify-content:center;gap:16px;padding:20px;}
+.divider-line{flex:1;max-width:200px;height:1px;background:linear-gradient(90deg,transparent,rgba(30,58,138,.2),transparent);}
+.divider-star{color:var(--gold);font-size:.9rem;letter-spacing:.4em;}
+
+/* HERO */
+.page-hero{min-height:44vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;padding-top:70px;background:linear-gradient(135deg,var(--blue-dark),var(--violet));color:#fff;}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 1px,transparent 44px);pointer-events:none;}
+.page-hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%;padding:clamp(50px,8vw,100px) clamp(20px,5vw,60px) clamp(40px,6vw,72px);}
+.breadcrumb{font-family:var(--ff-title);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:18px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.breadcrumb a{color:var(--gold-light);transition:color .3s;}
+.breadcrumb a:hover{color:#fff;}
+.page-title{font-family:var(--ff-title);font-size:clamp(2.2rem,6vw,5rem);font-weight:900;color:#fff;margin-bottom:12px;}
+.page-subtitle{font-family:var(--ff-title);font-size:1rem;letter-spacing:.15em;color:var(--gold-light);text-transform:uppercase;margin-bottom:20px;}
+.page-deco-line{width:100px;height:2px;background:linear-gradient(90deg,var(--gold),var(--red));}
+
+/* FILTRES */
+#filters{background:var(--white);}
+.filters-wrap{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:2rem;}
+.filter-btn{padding:.6rem 1.3rem;background:var(--white);border:1.5px solid var(--border);font-family:var(--ff-title);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);transition:all .25s;cursor:pointer;}
+.filter-btn:hover{border-color:var(--violet);color:var(--violet);}
+.filter-btn.active{background:var(--violet);border-color:var(--violet);color:var(--white);}
+
+/* FEATURED ARTICLE */
+#featured{background:var(--white);}
+.featured-card{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,5vw,60px);align-items:center;background:var(--offwhite);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .35s var(--ease);cursor:pointer;}
+.featured-card:hover{box-shadow:0 20px 50px rgba(30,58,138,.12);transform:translateY(-4px);}
+.featured-img{height:100%;min-height:340px;position:relative;overflow:hidden;background:var(--gray-light);}
+.featured-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s;}
+.featured-card:hover .featured-img img{transform:scale(1.05);}
+.featured-img-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem;background:linear-gradient(135deg,var(--blue),var(--violet));}
+.featured-body{padding:clamp(30px,4vw,50px) clamp(30px,4vw,50px) clamp(30px,4vw,50px) 0;}
+.featured-tag{display:inline-block;padding:.3rem .9rem;background:var(--gold);color:var(--blue-dark);font-family:var(--ff-title);font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;}
+.featured-title{font-family:var(--ff-title);font-size:clamp(1.5rem,3vw,2.3rem);font-weight:900;color:var(--blue-dark);line-height:1.25;margin-bottom:1rem;}
+.featured-excerpt{color:var(--text-soft);line-height:1.85;margin-bottom:1.5rem;}
+.featured-meta{display:flex;gap:1.2rem;font-size:.78rem;color:var(--text-soft);flex-wrap:wrap;}
+.featured-read-more{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.5rem;font-family:var(--ff-title);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--violet);border-bottom:2px solid var(--violet);padding-bottom:2px;transition:color .3s;}
+.featured-card:hover .featured-read-more{color:var(--red);border-color:var(--red);}
+@media(max-width:820px){.featured-card{grid-template-columns:1fr;}.featured-img{min-height:220px;}.featured-body{padding:0 25px 30px;}}
+
+/* LISTE ARTICLES */
+#blog-list{background:var(--offwhite);}
+.blog-list{display:flex;flex-direction:column;gap:20px;max-width:900px;margin:0 auto;}
+.blog-item{display:grid;grid-template-columns:220px 1fr;gap:24px;background:var(--white);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:all .3s;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.02);}
+.blog-item:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(30,58,138,.1);border-color:var(--violet);}
+.blog-item-img{height:100%;min-height:160px;overflow:hidden;background:var(--gray-light);}
+.blog-item-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.blog-item:hover .blog-item-img img{transform:scale(1.05);}
+.blog-item-img-ph{width:100%;height:100%;min-height:160px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;background:linear-gradient(135deg,var(--blue),var(--violet));}
+.blog-item-body{padding:1.4rem 1.4rem 1.4rem 0;display:flex;flex-direction:column;justify-content:center;}
+.blog-item-cat{font-family:var(--ff-title);font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--violet);margin-bottom:.5rem;}
+.blog-item-title{font-family:var(--ff-title);font-size:1.15rem;font-weight:700;color:var(--blue-dark);line-height:1.35;margin-bottom:.6rem;}
+.blog-item-excerpt{font-size:.87rem;color:var(--text-soft);line-height:1.65;margin-bottom:.8rem;}
+.blog-item-meta{display:flex;gap:1.2rem;font-size:.72rem;color:var(--text-soft);}
+@media(max-width:640px){.blog-item{grid-template-columns:1fr;}.blog-item-img{min-height:190px;}.blog-item-body{padding:0 1.2rem 1.4rem;}}
+
+/* PAGINATION */
+.pagination{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-top:3rem;}
+.pg-btn{min-width:42px;height:42px;padding:0 1rem;background:var(--white);border:1.5px solid var(--border);font-family:var(--ff-title);font-size:.78rem;font-weight:700;color:var(--text-soft);cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;}
+.pg-btn:hover:not(:disabled){border-color:var(--violet);color:var(--violet);}
+.pg-btn.active{background:var(--violet);border-color:var(--violet);color:#fff;}
+.pg-btn:disabled{opacity:.4;cursor:not-allowed;}
+
+/* EMPTY */
+.empty-state{text-align:center;padding:4rem 2rem;background:var(--white);border:1px solid var(--border);border-radius:8px;max-width:600px;margin:0 auto;}
+.empty-state-icon{font-size:4rem;margin-bottom:1rem;}
+.empty-state h3{font-family:var(--ff-title);font-size:1.4rem;color:var(--blue-dark);margin-bottom:.5rem;}
+.empty-state p{color:var(--text-soft);}
+
+/* CTA */
+#cta-blog{background:var(--white);}
+.cta-inner{max-width:640px;margin:0 auto;text-align:center;}
+.cta-inner p{color:var(--text-soft);margin:20px 0 30px;line-height:1.85;}
+.wa-main-btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;padding:18px 46px;border-radius:4px;background:linear-gradient(135deg,#128C7E,#25D366);color:white;font-family:var(--ff-title);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 8px 30px rgba(37,211,102,.3);transition:all .35s;}
+.wa-main-btn:hover{box-shadow:0 12px 42px rgba(37,211,102,.55);transform:translateY(-3px);}
+.wa-main-btn svg{width:22px;height:22px;fill:white;flex-shrink:0;}
+
+/* FOOTER */
+footer{background:var(--black);color:white;padding:50px 20px 20px;margin-top:60px;}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;max-width:1100px;margin:0 auto;}
+.footer-col h4{font-family:var(--ff-title);color:var(--gold);margin-bottom:15px;font-size:.8rem;letter-spacing:.15em;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:8px;}
+.footer-col a,.footer-col p{color:rgba(255,255,255,.85);font-size:.9rem;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{text-align:center;margin-top:40px;border-top:1px solid rgba(255,255,255,.1);padding-top:25px;font-size:.85rem;color:rgba(255,255,255,.7);}
+.novasoir-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);padding:10px 22px;border-radius:30px;margin-top:15px;color:white;transition:all .3s;}
+.novasoir-badge:hover{background:rgba(255,255,255,.15);}
+.novasoir-badge svg{width:18px;height:18px;fill:#25D366;}
+</style>
+</head>
+<body>
+
+<a href="#featured" class="skip-link">Aller au contenu principal</a>
+
+<div id="loader" aria-hidden="true">
+  <div class="loader-logo">Rabbi TAN</div>
+  <div class="loader-sub">DAH MÈHOU KPOTCHÈDJI</div>
+  <div class="loader-line"></div>
+  <div class="loader-tagline">Blog & Sagesse Ancestrale</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+</div>
+<canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+<a class="wa-float" href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.11 1.523 5.836L0 24l6.336-1.506A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.99 0-3.84-.56-5.407-1.527l-.387-.23-4.01.953.99-3.914-.255-.404A9.808 9.808 0 012.182 12C2.182 6.569 6.569 2.182 12 2.182S21.818 6.569 21.818 12 17.431 21.818 12 21.818z"/></svg>
+</a>
+
+<header id="navbar">
+  <a href="index.html" class="nav-brand">Rabbi TAN <span>DAH MÈHOU KPOTCHÈDJI</span></a>
+  <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="biographie.html">Biographie</a></li>
+      <li><a href="temple.html">Temple TGV</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="boutique.html">Boutique</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="radio.html">Radio</a></li>
+      <li><a href="actualites.html">Actualités</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta">Consulter</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <nav class="breadcrumb"><a href="index.html">Accueil</a> › <span>Blog</span></nav>
+    <h1 class="page-title">Blog</h1>
+    <div class="page-subtitle">Enseignements & Sagesse Ancestrale</div>
+    <div class="page-deco-line"></div>
+  </div>
+</div>
+
+<section id="filters">
+  <div class="section-inner" style="padding-top:50px;padding-bottom:30px;">
+    <div class="filters-wrap" id="filtersWrap">
+      <button class="filter-btn active" data-cat="all">Tous les articles</button>
+      <button class="filter-btn" data-cat="Enseignements">📚 Enseignements</button>
+      <button class="filter-btn" data-cat="Prédictions">🔮 Prédictions</button>
+      <button class="filter-btn" data-cat="Culture">🌍 Culture</button>
+      <button class="filter-btn" data-cat="Temple">🏛️ Temple</button>
+      <button class="filter-btn" data-cat="Événements">⭐ Événements</button>
+    </div>
+  </div>
+</section>
+
+<section id="featured">
+  <div class="section-inner" style="padding-top:20px;padding-bottom:20px;">
+    <div id="featuredWrap"></div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><div class="divider-line"></div><div class="divider-star">✦ ✦ ✦</div><div class="divider-line"></div></div>
+
+<section id="blog-list">
+  <div class="section-inner" style="padding-top:20px;">
+    <div id="blogList" class="blog-list"></div>
+    <div id="emptyState" style="display:none;">
+      <div class="empty-state">
+        <div class="empty-state-icon">📖</div>
+        <h3>Aucun article</h3>
+        <p>Essayez une autre catégorie.</p>
+      </div>
+    </div>
+    <div class="pagination" id="pagination"></div>
+  </div>
+</section>
+
+<section id="cta-blog">
+  <div class="section-inner">
+    <div class="cta-inner reveal">
+      <span class="section-tag">✦ Besoin de guidance ?</span>
+      <h2 class="section-title">Consultez Rabbi TAN</h2>
+      <p>Les écrits éclairent, mais rien ne remplace une consultation personnalisée. Rabbi TAN vous répond personnellement 24h/24.</p>
+      <a href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN%2C%20j'aimerais%20une%20consultation." target="_blank" rel="noopener" class="wa-main-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.11 1.523 5.836L0 24l6.336-1.506A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.99 0-3.84-.56-5.407-1.527l-.387-.23-4.01.953.99-3.914-.255-.404A9.808 9.808 0 012.182 12C2.182 6.569 6.569 2.182 12 2.182S21.818 6.569 21.818 12 17.431 21.818 12 21.818z"/></svg>
+        Consulter sur WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col"><h4>Rabbi TAN</h4><p>DAH MÈHOU KPOTCHÈDJI<br>Voyant Astrologue International</p></div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="biographie.html">Biographie</a></li>
+        <li><a href="temple.html">Temple</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="boutique.html">Boutique</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="radio.html">Radio</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col"><h4>Contact</h4><p>WhatsApp Bénin : +229 01 94 33 78 78<br>WhatsApp France : +33 7 84 83 04 16</p></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Rabbi TAN – Tous droits réservés.</p>
+    <a href="https://wa.me/2290152552106" target="_blank" rel="noopener" class="novasoir-badge">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+      Développé par <strong>Novasoir</strong> — +229 01 52 55 21 06
+    </a>
+  </div>
+</footer>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, addDoc, query, where, orderBy, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAmSVxlrxIWx9AvY_Y1Bz5kUnxDkuDc1uU",
+  authDomain: "rabbi-tan-site.firebaseapp.com",
+  projectId: "rabbi-tan-site",
+  storageBucket: "rabbi-tan-site.firebasestorage.app",
+  messagingSenderId: "753320511993",
+  appId: "1:753320511993:web:c9535ebf001950b6b81528"
+};
+
+const app = initializeApp(firebaseConfig);
+const db  = getFirestore(app);
+
+const PER_PAGE = 8;
+let allArticles = [];
+let filteredArticles = [];
+let currentPage = 1;
+let currentCat = 'all';
+
+async function loadArticles() {
+  try {
+    const q = query(collection(db, 'articles'), where('publie', '==', true), orderBy('date', 'desc'));
+    const snap = await getDocs(q);
+    allArticles = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    applyFilter();
+    trackPageView('blog');
+  } catch(e) {
+    try {
+      const q2 = query(collection(db, 'articles'), where('publie', '==', true));
+      const snap2 = await getDocs(q2);
+      allArticles = snap2.docs.map(d => ({ id: d.id, ...d.data() }))
+        .sort((a,b) => (b.date?.seconds||0) - (a.date?.seconds||0));
+      applyFilter();
+      trackPageView('blog');
+    } catch(e2) {
+      console.error(e2);
+      document.getElementById('blogList').innerHTML = '<p style="text-align:center;color:var(--text-soft);padding:3rem;">Erreur de chargement.</p>';
+    }
+  }
+}
+
+function applyFilter() {
+  filteredArticles = currentCat === 'all' ? allArticles : allArticles.filter(a => a.categorie === currentCat);
+  currentPage = 1;
+  renderFeatured();
+  renderList();
+  renderPagination();
+}
+
+function renderFeatured() {
+  const wrap = document.getElementById('featuredWrap');
+  // Le premier article = article en vedette
+  const featured = filteredArticles[0];
+  if (!featured) { wrap.innerHTML = ''; return; }
+
+  const img = (featured.images && featured.images.length > 0) ? featured.images[0] : (featured.imagesUrl || null);
+  const date = featured.date?.toDate ? featured.date.toDate().toLocaleDateString('fr-FR', {day:'2-digit',month:'long',year:'numeric'}) : '';
+
+  wrap.innerHTML = `
+    <article class="featured-card reveal" onclick="location.href='article.html?id=${featured.id}'">
+      <div class="featured-img">
+        ${img ? `<img src="${img}" alt="${featured.titre}" loading="lazy"/>` : `<div class="featured-img-ph">✨</div>`}
+      </div>
+      <div class="featured-body">
+        <span class="featured-tag">✦ À la une · ${featured.categorie || ''}</span>
+        <h2 class="featured-title">${featured.titre || ''}</h2>
+        <p class="featured-excerpt">${featured.extrait || ''}</p>
+        <div class="featured-meta">
+          <span>📅 ${date}</span>
+          <span>✍️ ${featured.auteur || 'Rabbi TAN'}</span>
+          <span>👁️ ${featured.vues || 0} vues</span>
+        </div>
+        <span class="featured-read-more">Lire l'article →</span>
+      </div>
+    </article>`;
+}
+
+function renderList() {
+  const wrap = document.getElementById('blogList');
+  const empty = document.getElementById('emptyState');
+  // On saute le premier (déjà en vedette)
+  const rest = filteredArticles.slice(1);
+  const start = (currentPage - 1) * PER_PAGE;
+  const items = rest.slice(start, start + PER_PAGE);
+
+  if (!items.length) {
+    wrap.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  wrap.innerHTML = items.map(a => {
+    const img = (a.images && a.images.length > 0) ? a.images[0] : (a.imagesUrl || null);
+    const date = a.date?.toDate ? a.date.toDate().toLocaleDateString('fr-FR', {day:'2-digit',month:'short',year:'numeric'}) : '';
+    return `
+      <article class="blog-item reveal" onclick="location.href='article.html?id=${a.id}'">
+        <div class="blog-item-img">
+          ${img ? `<img src="${img}" alt="${a.titre}" loading="lazy"/>` : `<div class="blog-item-img-ph">📖</div>`}
+        </div>
+        <div class="blog-item-body">
+          <span class="blog-item-cat">${a.categorie || ''}</span>
+          <h3 class="blog-item-title">${a.titre || ''}</h3>
+          <p class="blog-item-excerpt">${(a.extrait || '').slice(0,140)}…</p>
+          <div class="blog-item-meta">
+            <span>📅 ${date}</span>
+            <span>👁️ ${a.vues || 0} vues</span>
+          </div>
+        </div>
+      </article>`;
+  }).join('');
+
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
+}
+
+function renderPagination() {
+  const wrap = document.getElementById('pagination');
+  const rest = filteredArticles.length - 1;
+  const totalPages = Math.max(1, Math.ceil(rest / PER_PAGE));
+  if (totalPages <= 1) { wrap.innerHTML = ''; return; }
+
+  let html = `<button class="pg-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="goToPage(${currentPage - 1})">←</button>`;
+  for (let i = 1; i <= totalPages; i++) {
+    if (i === 1 || i === totalPages || Math.abs(i - currentPage) <= 1) {
+      html += `<button class="pg-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+    } else if (Math.abs(i - currentPage) === 2) {
+      html += `<span style="padding:0 .4rem;color:var(--text-soft);">…</span>`;
+    }
+  }
+  html += `<button class="pg-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="goToPage(${currentPage + 1})">→</button>`;
+  wrap.innerHTML = html;
+}
+
+window.goToPage = (n) => {
+  currentPage = n;
+  renderList();
+  renderPagination();
+  document.getElementById('blog-list').scrollIntoView({ behavior: 'smooth' });
+};
+
+document.getElementById('filtersWrap').addEventListener('click', (e) => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentCat = btn.dataset.cat;
+  applyFilter();
+});
+
+async function trackPageView(page) {
+  try {
+    await addDoc(collection(db, 'vues'), {
+      page, articleId: null,
+      userAgent: navigator.userAgent.slice(0, 150),
+      date: serverTimestamp()
+    });
+  } catch(e) {}
+}
+
+/* LOADER / NAV / REVEAL / PARTICULES */
+window.addEventListener('load', () => setTimeout(() => document.getElementById('loader').classList.add('hidden'), 1500));
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+function toggleNav(){document.getElementById('navToggle').classList.toggle('open');document.getElementById('navLinks').classList.toggle('open');}
+const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+(function(){
+  const c = document.getElementById('particleCanvas'), ctx = c.getContext('2d');
+  let W, H, particles = [];
+  function resize(){ W = c.width = window.innerWidth; H = c.height = window.innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+  for (let i = 0; i < 18; i++) particles.push({ x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*0.25, vy:(Math.random()-.5)*0.25, r:Math.random()*2+0.5, color:`rgba(30,58,138,${Math.random()*0.25+0.08})` });
+  function draw(){ ctx.clearRect(0,0,W,H); particles.forEach(p => { p.x+=p.vx; p.y+=p.vy; if(p.x<0)p.x=W; if(p.x>W)p.x=0; if(p.y<0)p.y=H; if(p.y>H)p.y=0; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle=p.color; ctx.fill(); }); requestAnimationFrame(draw); }
+  draw();
+})();
+
+loadArticles();
+</script>
+</body>
+</html>
