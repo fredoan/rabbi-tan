@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title id="pageTitle">Article — Rabbi TAN</title>
+<meta id="metaDesc" name="description" content="Lisez les articles et actualités de Rabbi TAN."/>
+<meta name="robots" content="index, follow">
+<link rel="canonical" id="canonicalLink" href="https://dahmehourabbitan.com/article.html">
+<meta property="og:title" id="ogTitle" content="Article — Rabbi TAN">
+<meta property="og:description" id="ogDescription" content="Lisez les articles de Rabbi TAN.">
+<meta property="og:image" id="ogImage" content="https://dahmehourabbitan.com/a.jpg">
+<meta property="og:url" id="ogUrl" content="https://dahmehourabbitan.com/article.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rabbi TAN — DAH MÈHOU KPOTCHÈDJI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="twitterTitle" content="Article — Rabbi TAN">
+<meta name="twitter:description" id="twitterDesc" content="Lisez les articles de Rabbi TAN.">
+<meta name="twitter:image" id="twitterImage" content="https://dahmehourabbitan.com/a.jpg">
+<meta name="theme-color" content="#1E3A8A">
+<link rel="icon" type="image/jpeg" href="a.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --blue:#1E3A8A;--blue-dark:#0F2557;--blue-light:#2b52c4;
+  --red:#DC2626;--violet:#7C3AED;--violet-mid:#6D28D9;
+  --gold:#D4AF37;--gold-light:#F5D67B;--black:#0F0F0F;
+  --white:#FFFFFF;--offwhite:#F9F9FB;--gray-light:#F3F4F6;
+  --text-dark:#1A1A1A;--text-soft:#2D3748;
+  --border:rgba(30,58,138,0.13);
+  --shadow:0 8px 25px rgba(0,0,0,0.05);
+  --ff-title:'Cinzel',serif;--ff-body:'Lato',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--offwhite);color:var(--text-dark);font-family:var(--ff-body);font-size:17px;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;height:auto;}
+button{cursor:pointer;}
+::selection{background:var(--blue);color:white;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:3px;}
+
+#readProgress{position:fixed;top:70px;left:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--violet),var(--gold));width:0;z-index:198;transition:width .1s linear;}
+
+#loader{position:fixed;inset:0;z-index:9999;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:20px;transition:opacity .8s var(--ease),visibility .8s var(--ease);}
+#loader.hidden{opacity:0;visibility:hidden;pointer-events:none;}
+.loader-logo{font-family:var(--ff-title);font-size:clamp(2rem,5vw,3.4rem);font-weight:900;letter-spacing:.07em;background:linear-gradient(135deg,var(--red),var(--blue),var(--violet),var(--gold));background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:rainbowShift 2.5s ease infinite;}
+.loader-sub{font-family:var(--ff-title);font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--blue);}
+.loader-line{width:50px;height:1px;background:var(--gold);margin:0 auto;}
+.loader-tagline{font-family:var(--ff-title);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-soft);}
+.loader-bar-wrap{width:260px;height:2px;background:rgba(0,0,0,0.06);border-radius:2px;overflow:hidden;}
+.loader-bar{height:100%;width:0;border-radius:2px;background:linear-gradient(90deg,var(--blue),var(--red),var(--violet));background-size:200% 100%;animation:barFill 1.8s var(--ease) forwards,barShimmer 1.2s linear infinite;}
+@keyframes rainbowShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes barFill{to{width:100%}}
+@keyframes barShimmer{0%{background-position:0%}100%{background-position:200%}}
+
+#particleCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.3;}
+
+.wa-float{position:fixed;bottom:30px;right:28px;z-index:500;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#128C7E,#25D366);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,.45);animation:waPulse 2.8s ease-in-out infinite;transition:transform .3s;}
+.wa-float:hover{transform:scale(1.12);}
+.wa-float svg{width:30px;height:30px;fill:white;}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 24px rgba(37,211,102,.45)}50%{box-shadow:0 4px 32px rgba(37,211,102,.75),0 0 0 14px rgba(37,211,102,.07)}}
+
+#navbar{position:fixed;top:0;left:0;right:0;z-index:200;height:70px;padding:0 clamp(20px,4vw,60px);display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.98);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+.nav-brand{font-family:var(--ff-title);font-size:1rem;font-weight:700;color:var(--blue);white-space:nowrap;}
+.nav-brand span{display:block;font-family:var(--ff-title);font-size:.55rem;letter-spacing:.2em;color:var(--red);}
+.nav-links{display:flex;align-items:center;gap:clamp(12px,1.8vw,26px);list-style:none;}
+.nav-links a{font-family:var(--ff-title);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-dark);font-weight:600;padding-bottom:3px;position:relative;transition:color .3s;white-space:nowrap;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transition:transform .3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--red);}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+.nav-cta{background:var(--violet)!important;color:white!important;padding:10px 22px!important;border-radius:2px;font-weight:600;}
+.nav-cta::after{display:none!important;}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;}
+.nav-toggle span{display:block;width:26px;height:3px;background:var(--blue);border-radius:2px;transition:all .3s;}
+.nav-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+.nav-toggle.open span:nth-child(2){opacity:0;}
+.nav-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+@media(max-width:1100px){
+  .nav-toggle{display:flex;}
+  .nav-links{position:fixed;top:70px;left:0;right:0;bottom:0;flex-direction:column;justify-content:center;gap:24px;background:white;transform:translateX(-100%);transition:transform .4s var(--ease);overflow-y:auto;padding:40px 20px;}
+  .nav-links.open{transform:translateX(0);}
+  .nav-links a{font-size:1.05rem;}
+}
+
+#loadingWrap{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding-top:70px;color:var(--text-soft);}
+.spinner{width:44px;height:44px;border:3px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+#articleWrap{display:none;}
+
+.art-cover{width:100%;max-height:520px;object-fit:cover;margin-top:70px;display:block;}
+.cover-placeholder{width:100%;height:340px;margin-top:70px;background:linear-gradient(135deg,var(--blue-dark),var(--violet));display:flex;align-items:center;justify-content:center;font-size:5rem;}
+
+.art-header{max-width:820px;margin:0 auto;padding:3rem 5% 1.5rem;}
+.breadcrumb{font-family:var(--ff-title);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-soft);margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;}
+.breadcrumb a{color:var(--blue);transition:color .3s;}
+.breadcrumb a:hover{color:var(--red);}
+
+.art-cat-badge{display:inline-block;padding:.35rem 1rem;margin-bottom:1.1rem;font-family:var(--ff-title);font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--white);background:var(--violet);}
+.art-title{font-family:var(--ff-title);font-size:clamp(1.9rem,5vw,3rem);font-weight:900;color:var(--blue-dark);line-height:1.2;margin-bottom:1.2rem;}
+.art-meta{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;padding-bottom:1.5rem;border-bottom:2px solid var(--gray-light);margin-bottom:2rem;font-size:.78rem;color:var(--text-soft);}
+.art-meta .author{color:var(--blue);font-weight:700;}
+
+.art-body{max-width:820px;margin:0 auto;padding:0 5% 3rem;}
+.art-content{font-size:1.02rem;line-height:1.95;color:var(--text-soft);}
+.art-content h2{font-family:var(--ff-title);font-size:1.7rem;color:var(--blue-dark);margin:2.2rem 0 .8rem;line-height:1.3;}
+.art-content h3{font-family:var(--ff-title);font-size:1.3rem;color:var(--blue);margin:1.8rem 0 .6rem;}
+.art-content p{margin-bottom:1.3rem;}
+.art-content blockquote{border-left:4px solid var(--gold);padding:.9rem 1.5rem;background:var(--gray-light);margin:1.8rem 0;font-style:italic;color:var(--text-dark);}
+.art-content ul,.art-content ol{padding-left:1.6rem;margin-bottom:1.3rem;}
+.art-content li{margin-bottom:.5rem;}
+.art-content img{max-width:100%;margin:1.5rem 0;border-radius:4px;border:1px solid var(--border);cursor:zoom-in;}
+.art-content strong{color:var(--blue-dark);font-weight:700;}
+.art-content a{color:var(--blue);text-decoration:underline;}
+
+.videos-list{margin:2rem 0;}
+.video-item{position:relative;width:100%;padding-bottom:56.25%;margin-bottom:1.5rem;background:#000;border-radius:6px;overflow:hidden;}
+.video-item iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:2.5rem;}
+.gallery-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;cursor:zoom-in;transition:transform .3s;}
+.gallery-img:hover{transform:scale(1.03);}
+
+.share-bar{max-width:820px;margin:0 auto;padding:2rem 5%;border-top:1px solid var(--border);display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;}
+.share-label{font-family:var(--ff-title);font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-soft);}
+.share-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem;border:1.5px solid var(--border);background:var(--white);color:var(--text-soft);font-family:var(--ff-title);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;transition:all .25s;cursor:pointer;}
+.share-btn:hover{background:var(--blue);color:var(--white);border-color:var(--blue);}
+.share-btn.wa:hover{background:#25D366;border-color:#25D366;}
+
+.back-wrap{max-width:820px;margin:0 auto;padding:0 5% 3rem;}
+.back-btn{display:inline-flex;align-items:center;gap:.6rem;padding:.8rem 1.7rem;background:var(--violet);color:var(--white);font-family:var(--ff-title);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:all .3s;}
+.back-btn:hover{background:var(--violet-mid);transform:translateY(-2px);}
+
+.related{background:var(--gray-light);padding:4rem 5%;}
+.related-title{font-family:var(--ff-title);font-size:1.8rem;font-weight:900;color:var(--blue-dark);text-align:center;margin-bottom:.7rem;}
+.related-line{width:70px;height:2px;background:linear-gradient(90deg,var(--blue),var(--red));margin:0 auto 2.2rem;}
+.related-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.related-card{background:var(--white);border:1px solid var(--border);border-radius:6px;overflow:hidden;cursor:pointer;transition:all .3s;box-shadow:0 2px 10px rgba(0,0,0,.03);}
+.related-card:hover{transform:translateY(-4px);box-shadow:0 15px 35px rgba(30,58,138,.12);border-color:var(--violet);}
+.related-card img{width:100%;height:160px;object-fit:cover;}
+.related-card-ph{width:100%;height:160px;background:linear-gradient(135deg,var(--blue),var(--violet));display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+.related-card-body{padding:1.2rem;}
+.related-card-cat{font-family:var(--ff-title);font-size:.58rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--violet);margin-bottom:.4rem;}
+.related-card-title{font-family:var(--ff-title);font-size:1rem;font-weight:700;color:var(--blue-dark);line-height:1.35;margin-bottom:.4rem;}
+.related-card-date{font-size:.7rem;color:var(--text-soft);}
+@media(max-width:1024px){.related-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.related-grid{grid-template-columns:1fr;}}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;z-index:900;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;padding:20px;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:4px;border:2px solid var(--gold);}
+.lightbox-close{position:absolute;top:20px;right:24px;font-size:2.5rem;color:white;cursor:pointer;background:none;border:none;transition:color .3s;}
+.lightbox-close:hover{color:var(--red);}
+
+/* FOOTER */
+footer{background:var(--black);color:white;padding:50px 20px 20px;margin-top:0;}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;max-width:1100px;margin:0 auto;}
+.footer-col h4{font-family:var(--ff-title);color:var(--gold);margin-bottom:15px;font-size:.8rem;letter-spacing:.15em;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:8px;}
+.footer-col a,.footer-col p{color:rgba(255,255,255,.85);font-size:.9rem;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{text-align:center;margin-top:40px;border-top:1px solid rgba(255,255,255,.1);padding-top:25px;font-size:.85rem;color:rgba(255,255,255,.7);}
+.novasoir-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);padding:10px 22px;border-radius:30px;margin-top:15px;color:white;transition:all .3s;}
+.novasoir-badge:hover{background:rgba(255,255,255,.15);}
+.novasoir-badge svg{width:18px;height:18px;fill:#25D366;}
+</style>
+</head>
+<body>
+
+<div id="readProgress"></div>
+
+<div id="loader" aria-hidden="true">
+  <div class="loader-logo">Rabbi TAN</div>
+  <div class="loader-sub">DAH MÈHOU KPOTCHÈDJI</div>
+  <div class="loader-line"></div>
+  <div class="loader-tagline">Chargement de l'article…</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+</div>
+<canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+<a class="wa-float" href="https://wa.me/2290194337878?text=Bonjour%20Rabbi%20TAN" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.11 1.523 5.836L0 24l6.336-1.506A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.99 0-3.84-.56-5.407-1.527l-.387-.23-4.01.953.99-3.914-.255-.404A9.808 9.808 0 012.182 12C2.182 6.569 6.569 2.182 12 2.182S21.818 6.569 21.818 12 17.431 21.818 12 21.818z"/></svg>
+</a>
+
+<header id="navbar">
+  <a href="index.html" class="nav-brand">Rabbi TAN <span>DAH MÈHOU KPOTCHÈDJI</span></a>
+  <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="biographie.html">Biographie</a></li>
+      <li><a href="temple.html">Temple TGV</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="boutique.html">Boutique</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="radio.html">Radio</a></li>
+      <li><a href="actualites.html">Actualités</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta">Consulter</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<div id="loadingWrap">
+  <div class="spinner"></div>
+  <p>Chargement de l'article…</p>
+</div>
+
+<div id="articleWrap">
+  <div id="coverWrap"></div>
+
+  <div class="art-header">
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a>
+      <span>›</span>
+      <a href="actualites.html">Actualités</a>
+      <span>›</span>
+      <span id="breadCat">—</span>
+    </div>
+    <span id="artCatBadge" class="art-cat-badge"></span>
+    <h1 id="artTitle" class="art-title"></h1>
+    <div class="art-meta">
+      <span>📅 <span id="artDate"></span></span>
+      <span>✍️ <span class="author" id="artAuthor"></span></span>
+      <span>⏱️ <span id="artReadTime"></span> min de lecture</span>
+      <span>👁️ <span id="artViews"></span> vues</span>
+    </div>
+  </div>
+
+  <div class="art-body">
+    <div class="art-content" id="artContent"></div>
+    <div class="videos-list" id="artVideos"></div>
+    <div class="gallery-grid" id="artGallery"></div>
+  </div>
+
+  <div class="share-bar">
+    <span class="share-label">Partager :</span>
+    <a id="shareWA" class="share-btn wa" target="_blank">💬 WhatsApp</a>
+    <a id="shareFB" class="share-btn" target="_blank">📘 Facebook</a>
+    <button class="share-btn" onclick="copyLink(this)">🔗 Copier le lien</button>
+  </div>
+
+  <div class="back-wrap">
+    <a href="actualites.html" class="back-btn">← Retour aux actualités</a>
+  </div>
+
+  <div class="related" id="relatedSection" style="display:none;">
+    <h2 class="related-title">Articles similaires</h2>
+    <div class="related-line"></div>
+    <div class="related-grid" id="relatedGrid"></div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col"><h4>Rabbi TAN</h4><p>DAH MÈHOU KPOTCHÈDJI<br>Voyant Astrologue International</p></div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="biographie.html">Biographie</a></li>
+        <li><a href="temple.html">Temple</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="boutique.html">Boutique</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="radio.html">Radio</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col"><h4>Contact</h4><p>WhatsApp Bénin : +229 01 94 33 78 78<br>WhatsApp France : +33 7 84 83 04 16</p></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Rabbi TAN – Tous droits réservés.</p>
+    <a href="https://wa.me/2290152552106" target="_blank" rel="noopener" class="novasoir-badge">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+      Développé par <strong>Novasoir</strong> — +229 01 52 55 21 06
+    </a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)" role="dialog" aria-modal="true" aria-label="Image agrandie">
+  <button class="lightbox-close" onclick="closeLightboxForce()" aria-label="Fermer">✕</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, doc, getDoc, updateDoc, increment, collection, query, where, orderBy, limit, getDocs, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAmSVxlrxIWx9AvY_Y1Bz5kUnxDkuDc1uU",
+  authDomain: "rabbi-tan-site.firebaseapp.com",
+  projectId: "rabbi-tan-site",
+  storageBucket: "rabbi-tan-site.firebasestorage.app",
+  messagingSenderId: "753320511993",
+  appId: "1:753320511993:web:c9535ebf001950b6b81528"
+};
+
+const app = initializeApp(firebaseConfig);
+const db  = getFirestore(app);
+
+function fmtDate(ts) {
+  if (!ts) return '';
+  const d = ts.toDate ? ts.toDate() : new Date(ts);
+  return d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' });
+}
+function readTime(content) {
+  const words = (content || '').replace(/<[^>]+>/g, '').split(/\s+/).length;
+  return Math.max(1, Math.ceil(words / 200));
+}
+function extractExcerpt(content, maxLen = 155) {
+  const text = (content || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  return text.length <= maxLen ? text : text.slice(0, maxLen - 3) + '...';
+}
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
+if (!id) { window.location.href = 'actualites.html'; }
+else { loadArticle(id); }
+
+async function loadArticle(id) {
+  try {
+    const snap = await getDoc(doc(db, 'articles', id));
+    if (!snap.exists() || !snap.data().publie) {
+      window.location.href = 'actualites.html';
+      return;
+    }
+    const art = { id: snap.id, ...snap.data() };
+    render(art);
+    loadRelated(art.categorie, id);
+    // Incrément vues (best effort)
+    try { await updateDoc(doc(db, 'articles', id), { vues: increment(1) }); } catch(e){}
+    // Log trafic
+    try {
+      await addDoc(collection(db, 'vues'), {
+        page: 'article', articleId: id,
+        userAgent: navigator.userAgent.slice(0, 150),
+        date: serverTimestamp()
+      });
+    } catch(e){}
+  } catch(e) {
+    console.error(e);
+    document.getElementById('loadingWrap').innerHTML =
+      '<span style="font-size:2rem">⚠️</span><p style="margin-top:1rem;color:#b91c1c">Erreur de chargement. <a href="actualites.html" style="color:var(--blue)">Retour aux actualités</a></p>';
+  }
+}
+
+function render(art) {
+  const articleUrl = `https://dahmehourabbitan.com/article.html?id=${art.id}`;
+  const excerpt = extractExcerpt(art.contenu, 155);
+
+  const allImages = (art.images && art.images.length > 0) ? art.images : (art.imagesUrl ? [art.imagesUrl] : []);
+  const coverImage = allImages.length > 0 ? allImages[0] : null;
+  const galleryImages = allImages.length > 1 ? allImages.slice(1) : [];
+  const allVideos = (art.videos && art.videos.length > 0) ? art.videos : (art.videoUrl ? [art.videoUrl] : []);
+  const imageUrl = coverImage || 'https://dahmehourabbitan.com/a.jpg';
+
+  /* SEO */
+  document.title = `${art.titre} — Rabbi TAN`;
+  document.getElementById('pageTitle').textContent = document.title;
+  document.getElementById('metaDesc').setAttribute('content', excerpt);
+  document.getElementById('canonicalLink').setAttribute('href', articleUrl);
+  document.getElementById('ogTitle').setAttribute('content', `${art.titre} — Rabbi TAN`);
+  document.getElementById('ogDescription').setAttribute('content', excerpt);
+  document.getElementById('ogImage').setAttribute('content', imageUrl);
+  document.getElementById('ogUrl').setAttribute('content', articleUrl);
+  document.getElementById('twitterTitle').setAttribute('content', `${art.titre} — Rabbi TAN`);
+  document.getElementById('twitterDesc').setAttribute('content', excerpt);
+  document.getElementById('twitterImage').setAttribute('content', imageUrl);
+
+  /* Cover */
+  const cw = document.getElementById('coverWrap');
+  cw.innerHTML = coverImage
+    ? `<img class="art-cover" src="${coverImage}" alt="${art.titre}" loading="eager"/>`
+    : `<div class="cover-placeholder">📰</div>`;
+
+  /* En-tête */
+  document.getElementById('breadCat').textContent = art.categorie || 'Article';
+  const badge = document.getElementById('artCatBadge');
+  badge.textContent = art.categorie || 'Article';
+  document.getElementById('artTitle').textContent = art.titre || '';
+  document.getElementById('artDate').textContent = fmtDate(art.date);
+  document.getElementById('artAuthor').textContent = art.auteur || 'Rabbi TAN';
+  document.getElementById('artReadTime').textContent = readTime(art.contenu);
+  document.getElementById('artViews').textContent = (art.vues || 0) + 1;
+
+  /* Contenu */
+  const contentDiv = document.getElementById('artContent');
+  if ((art.contenu || '').includes('<')) {
+    contentDiv.innerHTML = art.contenu;
+  } else {
+    contentDiv.innerHTML = '<p>' + (art.contenu || '').replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>') + '</p>';
+  }
+  // Rendre les images du contenu cliquables
+  contentDiv.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+  });
+
+  /* Vidéos */
+  const vidsWrap = document.getElementById('artVideos');
+  if (allVideos.length > 0) {
+    vidsWrap.innerHTML = allVideos.map(url => {
+      let vid = '';
+      if (url.includes('youtube.com/watch')) {
+        const v = new URL(url).searchParams.get('v');
+        vid = v ? `<div class="video-item"><iframe src="https://www.youtube.com/embed/${v}" allowfullscreen loading="lazy"></iframe></div>` : '';
+      } else if (url.includes('youtu.be')) {
+        const v = url.split('/').pop().split('?')[0];
+        vid = `<div class="video-item"><iframe src="https://www.youtube.com/embed/${v}" allowfullscreen loading="lazy"></iframe></div>`;
+      }
+      return vid;
+    }).join('');
+  }
+
+  /* Galerie */
+  const galWrap = document.getElementById('artGallery');
+  if (galleryImages.length > 0) {
+    galWrap.innerHTML = galleryImages.map(src =>
+      `<img class="gallery-img" src="${src}" alt="${art.titre}" loading="lazy" onclick="openLightbox('${src}','${(art.titre||'').replace(/'/g,'&#39;')}')"/>`
+    ).join('');
+  }
+
+  /* Partage */
+  const waUrl = `https://wa.me/2290194337878?text=${encodeURIComponent(art.titre + ' — ' + articleUrl)}`;
+  document.getElementById('shareWA').href = waUrl;
+  document.getElementById('shareFB').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(articleUrl)}`;
+
+  /* JSON-LD */
+  injectJsonLd(art, articleUrl, imageUrl, excerpt);
+
+  document.getElementById('loadingWrap').style.display = 'none';
+  document.getElementById('articleWrap').style.display = 'block';
+}
+
+function injectJsonLd(art, articleUrl, imageUrl, excerpt) {
+  document.querySelectorAll('script[data-ld="article"]').forEach(s => s.remove());
+  const datePublished = art.date ? (art.date.toDate ? art.date.toDate().toISOString() : new Date(art.date).toISOString()) : new Date().toISOString();
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": art.titre,
+    "description": excerpt,
+    "image": imageUrl,
+    "datePublished": datePublished,
+    "dateModified": datePublished,
+    "author": { "@type": "Person", "name": art.auteur || "Rabbi TAN", "url": "https://dahmehourabbitan.com/biographie.html" },
+    "publisher": { "@type": "Organization", "name": "Rabbi TAN", "logo": { "@type": "ImageObject", "url": "https://dahmehourabbitan.com/a.jpg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": articleUrl }
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://dahmehourabbitan.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Actualités", "item": "https://dahmehourabbitan.com/actualites.html" },
+      { "@type": "ListItem", "position": 3, "name": art.titre, "item": articleUrl }
+    ]
+  };
+  const s1 = document.createElement('script'); s1.type='application/ld+json'; s1.setAttribute('data-ld','article'); s1.textContent=JSON.stringify(articleSchema);
+  const s2 = document.createElement('script'); s2.type='application/ld+json'; s2.setAttribute('data-ld','breadcrumb'); s2.textContent=JSON.stringify(breadcrumbSchema);
+  document.head.appendChild(s1); document.head.appendChild(s2);
+}
+
+async function loadRelated(cat, excludeId) {
+  if (!cat) return;
+  try {
+    const q = query(collection(db,'articles'), where('publie','==',true), where('categorie','==',cat), limit(4));
+    const snap = await getDocs(q);
+    const arts = snap.docs.map(d => ({ id:d.id, ...d.data() })).filter(a => a.id !== excludeId).slice(0,3);
+    if (!arts.length) return;
+    const grid = document.getElementById('relatedGrid');
+    grid.innerHTML = arts.map(a => {
+      const firstImg = (a.images && a.images.length > 0) ? a.images[0] : (a.imagesUrl || null);
+      const date = a.date?.toDate ? a.date.toDate().toLocaleDateString('fr-FR') : '';
+      return `
+        <div class="related-card" onclick="location.href='article.html?id=${a.id}'">
+          ${firstImg ? `<img src="${firstImg}" alt="${a.titre}" loading="lazy"/>` : `<div class="related-card-ph">📰</div>`}
+          <div class="related-card-body">
+            <div class="related-card-cat">${a.categorie || ''}</div>
+            <div class="related-card-title">${a.titre}</div>
+            <div class="related-card-date">📅 ${date}</div>
+          </div>
+        </div>`;
+    }).join('');
+    document.getElementById('relatedSection').style.display = 'block';
+  } catch(e) { console.error(e); }
+}
+
+/* Lightbox */
+window.openLightbox = (src, alt) => {
+  const lb = document.getElementById('lightbox'), img = document.getElementById('lightboxImg');
+  img.src = src; img.alt = alt || '';
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+};
+window.closeLightbox = (e) => {
+  if (e.target === document.getElementById('lightbox')) closeLightboxForce();
+};
+window.closeLightboxForce = () => {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+};
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightboxForce();
+});
+
+/* Copier lien */
+window.copyLink = (btn) => {
+  navigator.clipboard.writeText(window.location.href)
+    .then(() => {
+      const old = btn.textContent;
+      btn.textContent = '✅ Copié !';
+      setTimeout(() => btn.textContent = old, 2000);
+    })
+    .catch(() => {});
+};
+
+/* LOADER / NAV / REVEAL / PARTICULES / PROGRESS */
+window.addEventListener('load', () => setTimeout(() => document.getElementById('loader').classList.add('hidden'), 1200));
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+  const wrap = document.getElementById('articleWrap');
+  if (wrap && wrap.style.display !== 'none') {
+    const total = document.body.scrollHeight - window.innerHeight;
+    document.getElementById('readProgress').style.width = (window.scrollY / total * 100) + '%';
+  }
+}, { passive: true });
+function toggleNav(){document.getElementById('navToggle').classList.toggle('open');document.getElementById('navLinks').classList.toggle('open');}
+
+(function(){
+  const c = document.getElementById('particleCanvas'), ctx = c.getContext('2d');
+  let W, H, particles = [];
+  function resize(){ W = c.width = window.innerWidth; H = c.height = window.innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+  for (let i = 0; i < 18; i++) particles.push({ x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*0.25, vy:(Math.random()-.5)*0.25, r:Math.random()*2+0.5, color:`rgba(30,58,138,${Math.random()*0.25+0.08})` });
+  function draw(){ ctx.clearRect(0,0,W,H); particles.forEach(p => { p.x+=p.vx; p.y+=p.vy; if(p.x<0)p.x=W; if(p.x>W)p.x=0; if(p.y<0)p.y=H; if(p.y>H)p.y=0; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle=p.color; ctx.fill(); }); requestAnimationFrame(draw); }
+  draw();
+})();
+</script>
+</body>
+</html>
