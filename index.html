@@ -958,7 +958,7 @@
 <!-- ⬇️ SCRIPT POUR CHARGER LES DERNIÈRES ACTUALITÉS DEPUIS FIRESTORE ⬇️ -->
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getFirestore, collection, query, where, orderBy, limit, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+    import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
     const firebaseConfig = {
         apiKey: "AIzaSyAmSVxlrxIWx9AvY_Y1Bz5kUnxDkuDc1uU",
@@ -973,25 +973,37 @@
     const db = getFirestore(app);
 
     async function loadLatestArticles() {
-    const grid = document.getElementById('actualites-accueil-grid');
-    if (!grid) return;
+        const grid = document.getElementById('actualites-accueil-grid');
+        if (!grid) return;
 
-    try {
-        // ⚠️ SUPPRESSION du orderBy : plus besoin d'index composite
-        const q = query(
-            collection(db, 'articles'),
-            where('publie', '==', true)
-        );
-        const snap = await getDocs(q);
+        let articles = [];
 
-        // Tri côté client par date décroissante, puis on garde les 3 premiers
-        const articles = snap.docs
-            .map(d => ({ id: d.id, ...d.data() }))
-            .sort((a, b) => (b.date?.seconds || 0) - (a.date?.seconds || 0))
-            .slice(0, 3);
+        try {
+            // Tentative 1 : filtre simple SANS orderBy (aucun index requis)
+            const q = query(collection(db, 'articles'), where('publie', '==', true));
+            const snap = await getDocs(q);
+            articles = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+        } catch (e1) {
+            console.warn('[actualités] Filtre échoué, fallback lecture totale :', e1.message);
+            // Fallback : lire tout puis filtrer côté client
+            try {
+                const snap2 = await getDocs(collection(db, 'articles'));
+                articles = snap2.docs
+                    .map(d => ({ id: d.id, ...d.data() }))
+                    .filter(a => a.publie === true);
+            } catch (e2) {
+                console.error('[actualités] Erreur fatale :', e2);
+                grid.innerHTML = '<p style="text-align:center;color:var(--red);grid-column:1/-1;">Impossible de charger les actualités.</p>';
+                return;
+            }
+        }
+
+        // Tri par date décroissante côté client + limite à 3
+        articles.sort((a, b) => (b.date?.seconds || 0) - (a.date?.seconds || 0));
+        articles = articles.slice(0, 3);
 
         if (!articles.length) {
-            grid.innerHTML = '<p style="text-align:center;color:var(--text-soft);grid-column:1/-1;">Aucun article publié pour le moment.</p>';
+            grid.innerHTML = '<p style="text-align:center;color:var(--text-soft);grid-column:1/-1;">Aucun article publié pour le moment. <a href="actualites.html" style="color:var(--blue);font-weight:700;">Voir toutes les actualités →</a></p>';
             return;
         }
 
@@ -1014,26 +1026,13 @@
                 </article>`;
         }).join('');
 
-        // Réactive l'animation d'apparition pour les nouvelles cartes
-        document.querySelectorAll('.actualite-accueil-card.reveal:not(.visible)')
-            .forEach(el => observer.observe(el));
-
-    } catch (error) {
-        console.error('Erreur articles :', error);
-        grid.innerHTML = '<p style="text-align:center;color:var(--red);grid-column:1/-1;">Erreur de chargement.</p>';
+        if (typeof observer !== 'undefined' && observer) {
+            document.querySelectorAll('.actualite-accueil-card.reveal:not(.visible)')
+                .forEach(el => observer.observe(el));
+        }
     }
-}
 
-    // Lancement une fois la page chargée
     window.addEventListener('load', loadLatestArticles);
-</script>
-<!-- ⬆️ FIN SCRIPT ACTUALITÉS ⬆️ -->
-
-<!-- ✨ AJOUT 3 : module d'enrichissement -->
-<script type="module">
-    import { mountProductCarousel, injectOngBlock } from "./enhance.js";
-    injectOngBlock();
-    mountProductCarousel('#homeCarousel');
 </script>
 </body>
 </html>
