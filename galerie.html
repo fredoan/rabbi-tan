@@ -65,6 +65,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
+    <!-- ✨ AJOUT 1 : feuille de style des nouveaux composants (bannière ONG, animations) -->
+    <link rel="stylesheet" href="enhance.css">
+
     <!-- ============ SCHEMA : COLLECTION PAGE ============ -->
     <script type="application/ld+json">
     {
@@ -687,6 +690,11 @@
         if (e.key === 'ArrowLeft') navigateLightbox(-1);
         if (e.key === 'ArrowRight') navigateLightbox(1);
     });
+</script>
+<!-- ✨ AJOUT 2 : module d'enrichissement (bannière ONG + tracking). Le script ci-dessus n'est PAS modifié. -->
+<script type="module">
+    import { initAutoTracking } from "./engagement.js";
+    initAutoTracking('galerie');
 </script>
 </body>
 </html>
