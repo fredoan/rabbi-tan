@@ -81,19 +81,31 @@ export async function injectHeroStats() {
 
   const badge = document.createElement('div');
   badge.className = 'rt-hero-stats-badge';
-  badge.innerHTML = `
-    <span class="rt-hero-stats-icon">👁️</span>
-    <span class="rt-hero-stats-text">Chargement…</span>`;
+  badge.innerHTML = `<span class="rt-hero-stats-icon">👁️</span><span class="rt-hero-stats-text">Chargement…</span>`;
   heroBtns.parentNode.insertBefore(badge, heroBtns.nextSibling);
 
   try {
+    // Compte uniquement les articles PUBLIÉS (pas les brouillons)
+    const artSnap = await getDocs(collection(db, "articles"));
+    const publishedCount = artSnap.docs.filter(d => d.data().publie === true).length;
+
     const stats = await getGlobalStats();
     const views = stats.vues.toLocaleString('fr-FR');
-    const articles = stats.articles;
-    badge.querySelector('.rt-hero-stats-text').textContent =
-      `Déjà +${views} visites — ${articles} articles publiés`;
+
+    let text;
+    if (publishedCount > 0 && stats.vues > 0) {
+      text = `Déjà +${views} visite${stats.vues > 1 ? 's' : ''} — ${publishedCount} article${publishedCount > 1 ? 's' : ''} publié${publishedCount > 1 ? 's' : ''}`;
+    } else if (stats.vues > 0) {
+      text = `Déjà +${views} visite${stats.vues > 1 ? 's' : ''}`;
+    } else if (publishedCount > 0) {
+      text = `${publishedCount} article${publishedCount > 1 ? 's' : ''} publié${publishedCount > 1 ? 's' : ''}`;
+    } else {
+      text = "Rejoignez notre communauté";
+    }
+    badge.querySelector('.rt-hero-stats-text').textContent = text;
+    console.log('[hero-stats] Vue:', stats.vues, '| Articles publiés:', publishedCount);
   } catch (e) {
-    console.warn("Stats hero non disponibles :", e);
+    console.warn("[hero-stats] Erreur:", e);
     badge.querySelector('.rt-hero-stats-text').textContent = "Rejoignez notre communauté";
   }
 }
