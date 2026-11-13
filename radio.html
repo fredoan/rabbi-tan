@@ -63,6 +63,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
+    <!-- ✨ AJOUT 1 : feuille de style des nouveaux composants (bannière ONG, animations) -->
+    <link rel="stylesheet" href="enhance.css">
+
     <!-- ============ SCHEMA : WEBPAGE ============ -->
     <script type="application/ld+json">
     {
@@ -771,6 +774,11 @@
         playing=false;btn.textContent='▶';btn.setAttribute('aria-pressed','false');
         vis.classList.remove('playing');
     });
+</script>
+<!-- ✨ AJOUT 2 : module d'enrichissement (bannière ONG + tracking). Le script ci-dessus n'est PAS modifié. -->
+<script type="module">
+    import { initAutoTracking } from "./engagement.js";
+    initAutoTracking('radio');
 </script>
 </body>
 </html>
