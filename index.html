@@ -973,51 +973,56 @@
     const db = getFirestore(app);
 
     async function loadLatestArticles() {
-        const grid = document.getElementById('actualites-accueil-grid');
-        if (!grid) return;
+    const grid = document.getElementById('actualites-accueil-grid');
+    if (!grid) return;
 
-        try {
-            // On demande les 3 derniers articles publiés
-            const q = query(
-                collection(db, 'articles'),
-                where('publie', '==', true),
-                orderBy('date', 'desc'),
-                limit(3)
-            );
-            const snap = await getDocs(q);
+    try {
+        // ⚠️ SUPPRESSION du orderBy : plus besoin d'index composite
+        const q = query(
+            collection(db, 'articles'),
+            where('publie', '==', true)
+        );
+        const snap = await getDocs(q);
 
-            if (snap.empty) {
-                grid.innerHTML = '<p style="text-align:center;color:var(--text-soft);grid-column:1/-1;">Aucun article publié pour le moment. Revenez bientôt !</p>';
-                return;
-            }
+        // Tri côté client par date décroissante, puis on garde les 3 premiers
+        const articles = snap.docs
+            .map(d => ({ id: d.id, ...d.data() }))
+            .sort((a, b) => (b.date?.seconds || 0) - (a.date?.seconds || 0))
+            .slice(0, 3);
 
-            grid.innerHTML = snap.docs.map(doc => {
-                const a = doc.data();
-                const img = (a.images && a.images.length > 0) ? a.images[0] : (a.imagesUrl || null);
-                const date = a.date?.toDate ? a.date.toDate().toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric' }) : 'Date inconnue';
-                return `
-                    <article class="actualite-accueil-card reveal">
-                        <div class="actualite-accueil-img">
-                            ${img ? `<img src="${img}" alt="${a.titre || 'Article'}" loading="lazy"/>` : `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:3rem;">📰</div>`}
-                        </div>
-                        <div class="actualite-accueil-body">
-                            <div class="actualite-accueil-cat">${a.categorie || 'Actualité'}</div>
-                            <h3 class="actualite-accueil-titre">${a.titre || 'Sans titre'}</h3>
-                            <p class="actualite-accueil-extrait">${(a.extrait || '').substring(0, 120)}${(a.extrait || '').length > 120 ? '…' : ''}</p>
-                            <div class="actualite-accueil-date">📅 ${date}</div>
-                        </div>
-                    </article>
-                `;
-            }).join('');
-
-            // Réactive l'animation d'apparition pour les nouvelles cartes
-            document.querySelectorAll('.actualite-accueil-card.reveal:not(.visible)').forEach(el => observer.observe(el));
-
-        } catch (error) {
-            console.error('Erreur lors du chargement des actualités :', error);
-            grid.innerHTML = '<p style="text-align:center;color:var(--red);grid-column:1/-1;">Impossible de charger les actualités pour le moment. Vérifiez vos règles Firestore et l\'index composite (publie + date).</p>';
+        if (!articles.length) {
+            grid.innerHTML = '<p style="text-align:center;color:var(--text-soft);grid-column:1/-1;">Aucun article publié pour le moment.</p>';
+            return;
         }
+
+        grid.innerHTML = articles.map(a => {
+            const img = (a.images && a.images.length > 0) ? a.images[0] : (a.imagesUrl || null);
+            const date = a.date?.toDate
+                ? a.date.toDate().toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric' })
+                : '';
+            return `
+                <article class="actualite-accueil-card reveal">
+                    <div class="actualite-accueil-img">
+                        ${img ? `<img src="${img}" alt="${a.titre || 'Article'}" loading="lazy"/>` : `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:3rem;">📰</div>`}
+                    </div>
+                    <div class="actualite-accueil-body">
+                        <div class="actualite-accueil-cat">${a.categorie || 'Actualité'}</div>
+                        <h3 class="actualite-accueil-titre">${a.titre || 'Sans titre'}</h3>
+                        <p class="actualite-accueil-extrait">${(a.extrait || '').substring(0, 120)}${(a.extrait || '').length > 120 ? '…' : ''}</p>
+                        <div class="actualite-accueil-date">📅 ${date}</div>
+                    </div>
+                </article>`;
+        }).join('');
+
+        // Réactive l'animation d'apparition pour les nouvelles cartes
+        document.querySelectorAll('.actualite-accueil-card.reveal:not(.visible)')
+            .forEach(el => observer.observe(el));
+
+    } catch (error) {
+        console.error('Erreur articles :', error);
+        grid.innerHTML = '<p style="text-align:center;color:var(--red);grid-column:1/-1;">Erreur de chargement.</p>';
     }
+}
 
     // Lancement une fois la page chargée
     window.addEventListener('load', loadLatestArticles);
