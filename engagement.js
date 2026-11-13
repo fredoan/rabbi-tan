@@ -1,6 +1,6 @@
 /* ============================================================
    engagement.js — Module de tracking et statistiques
-   Utilisé par toutes les pages + admin
+   Version complète et définitive
    ============================================================ */
 import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import {
@@ -114,7 +114,22 @@ export async function deleteComment(commentId) {
   await deleteDoc(doc(db, "comments", commentId));
 }
 
-/* ---------- Stats agrégées ---------- */
+/* ---------- Stats agrégées (VERSION DÉFENSIVE) ---------- */
+export async function getGlobalStats() {
+  const safe = async (ref) => {
+    try { return (await getDocs(ref)).size; }
+    catch (e) { return 0; }
+  };
+  const [vues, likes, comments, clics, articles] = await Promise.all([
+    safe(collection(db, "vues")),
+    safe(collection(db, "likes")),
+    safe(collection(db, "comments")),
+    safe(collection(db, "clics")),
+    safe(collection(db, "articles"))
+  ]);
+  return { vues, likes, comments, clics, articles };
+}
+
 export async function getStatsLastDays(days = 30) {
   const since = new Date(); since.setDate(since.getDate() - days + 1);
   const snap = await getDocs(collection(db, "vues"));
@@ -153,17 +168,6 @@ export async function getStatsByMonth(months = 12) {
   return out;
 }
 
-export async function getGlobalStats() {
-  const [v, l, c, k, a] = await Promise.all([
-    getDocs(collection(db, "vues")),
-    getDocs(collection(db, "likes")),
-    getDocs(collection(db, "comments")),
-    getDocs(collection(db, "clics")),
-    getDocs(collection(db, "articles"))
-  ]);
-  return { vues: v.size, likes: l.size, comments: c.size, clics: k.size, articles: a.size };
-}
-
 export async function getTopArticles(n = 5) {
   try {
     const snap = await getDocs(collection(db, "articles"));
@@ -171,6 +175,43 @@ export async function getTopArticles(n = 5) {
       .filter(x => x.publie)
       .sort((a, b) => (b.vues || 0) - (a.vues || 0))
       .slice(0, n);
+  } catch (e) { return []; }
+}
+
+/* ---------- Stats par produit ---------- */
+export async function getProductStats() {
+  try {
+    const snap = await getDocs(collection(db, "clics"));
+    const byProduct = {};
+    snap.forEach(d => {
+      const target = String(d.data().target || "");
+      const match = target.match(/#product-([a-z0-9-]+)/i);
+      if (match) {
+        const id = match[1];
+        byProduct[id] = (byProduct[id] || 0) + 1;
+      }
+    });
+    const arr = Object.entries(byProduct).map(([id, count]) => ({ id, count }));
+    arr.sort((a, b) => b.count - a.count);
+    return arr;
+  } catch (e) { return []; }
+}
+
+/* ---------- Stats par article ---------- */
+export async function getArticleStats() {
+  try {
+    const snap = await getDocs(collection(db, "clics"));
+    const byArticle = {};
+    snap.forEach(d => {
+      const target = String(d.data().target || "");
+      if (target.startsWith("article.html?id=")) {
+        const id = target.split("id=")[1].split("&")[0];
+        byArticle[id] = (byArticle[id] || 0) + 1;
+      }
+    });
+    const arr = Object.entries(byArticle).map(([id, count]) => ({ id, count }));
+    arr.sort((a, b) => b.count - a.count);
+    return arr;
   } catch (e) { return []; }
 }
 
