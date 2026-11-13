@@ -59,6 +59,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
+    <!-- ✨ AJOUT 1 : feuille de style des nouveaux composants (bannière ONG, carrousel, animations) -->
+    <link rel="stylesheet" href="enhance.css">
+
     <!-- ============ SCHEMA : WEBPAGE ============ -->
     <script type="application/ld+json">
     {
@@ -543,6 +546,18 @@
     </div>
 </div>
 
+<!-- ✨ AJOUT 2 : section carrousel auto-scroll des produits (s'ajoute entre le page-hero et #gallery-top, ne retire rien) -->
+<section id="carousel-top" aria-label="Produits vedettes en défilement">
+    <div class="section-inner" style="padding-top:50px;padding-bottom:40px;">
+        <div class="section-header" style="margin-bottom:24px;">
+            <span class="section-tag">✦ En défilement</span>
+            <h2 class="section-title" style="font-size:clamp(1.5rem,4vw,2rem);">Nos produits en vedette</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="rt-carousel-wrap" id="shopCarousel" aria-label="Carrousel produits vedettes"></div>
+    </div>
+</section>
+
 <!-- GALLERY TOP -->
 <section id="gallery-top" aria-label="Aperçu des produits de la boutique">
     <div class="section-inner" style="padding-top:50px; padding-bottom:50px;">
@@ -570,241 +585,242 @@
         </div>
 
         <div class="product-grid">
-            <article class="product-card reveal">
+            <!-- ✨ AJOUT 3 : id="product-xxx" ajouté à chaque carte pour ancrage + scroll depuis le carrousel. Aucun autre changement. -->
+            <article class="product-card reveal" id="product-kefa">
                 <h3 class="product-name">KEFA</h3>
                 <p class="product-desc">Entité spirituelle conçue sur l'équilibre des 4 éléments (Feu, Terre, Air, Eau). Accomplit vos désirs (prospérité, amour, protection, santé) dans de brefs délais. Sans effet secondaire. Se déplace partout. Paroles sacrées fournies.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20produit%20KEFA." target="_blank" rel="noopener" class="product-btn" aria-label="Commander KEFA sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-kpe-akonka">
                 <h3 class="product-name">KPE AKONKA</h3>
                 <p class="product-desc">Puissant booster des vœux (force aux paroles). Au réveil sans parler, touchez la langue avec le bout su savonneux et crachez devant en faisant face au soleil, dans les 4 points cardinaux, en haut et en bas. Dites vos souhaits.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20produit%20KPE%20AKONKA." target="_blank" rel="noopener" class="product-btn" aria-label="Commander KPE AKONKA sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-parfum-djogbe">
                 <h3 class="product-name">PARFUM DJOGBE</h3>
                 <p class="product-desc">Puissant parfum qui attire les opportunités financières : clients, marché, promotion, succès au concours, séduction, chance aux jeux de hasard.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20PARFUM%20DJOGBE." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Parfum DJOGBE sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-parfum-zedaga">
                 <h3 class="product-name">PARFUM ZEDAGA</h3>
                 <p class="product-desc">Élève dans la société : au service, en association, dans un parti, dans la famille. Passer sur la tête après le bain du matin. Paroles sacrées fournies.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20PARFUM%20ZEDAGA." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Parfum ZEDAGA sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-poudre-jupiter">
                 <h3 class="product-name">POUDRE JUPITER</h3>
                 <p class="product-desc">Donne la chance dans les affaires, ventes et tout domaine de réussite. À laper le matin au réveil avec du gin ou de l'eau.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20la%20POUDRE%20JUPITER." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Poudre Jupiter sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-bain-lunaire">
                 <h3 class="product-name">COFFRET DU BAIN LUNAIRE</h3>
                 <p class="product-desc">Bougie lunaire + essence lunaire. Purifie l'aura pour rendre efficaces les produits spirituels, rituels et prières. À faire chaque mois ou tous les 3 mois.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20COFFRET%20DU%20BAIN%20LUNAIRE." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Coffret du Bain Lunaire sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-saint-uriel">
                 <h3 class="product-name">COFFRE SAINT URIEL</h3>
                 <p class="product-desc">Bougie rouge, bic rouge, papier blanc bénis. Rituel d'amour pour consolider le couple, ramener la paix, faire revenir une personne. Procédure inscrite sur la boîte.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20COFFRE%20SAINT%20URIEL." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Coffre Saint Uriel sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-pentacle-salomon">
                 <h3 class="product-name">PENTACLE DE SALOMON</h3>
                 <p class="product-desc">Amulette magnétisée à base de lumière violette. Éloigne tout esprit maléfique du lieu (maison, bureau, champ) sur au moins 400m².</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20PENTACLE%20DE%20SALOMON." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Pentacle de Salomon sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-brs-bouton">
                 <h3 class="product-name">BRS (Bouton Richesse de Salomon)</h3>
                 <p class="product-desc">Placez-le à votre tenue à droite sur la poitrine. Attire les bonnes vibrations qui augmentent votre chance de réaliser vos rêves.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20BRS%20(Bouton%20Richesse%20de%20Salomon)." target="_blank" rel="noopener" class="product-btn" aria-label="Commander BRS Bouton sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-brs-bague">
                 <h3 class="product-name">BRS (Bague/Bracelet Richesse de Salomon)</h3>
                 <p class="product-desc">Augmente le charisme, donne la chance dans tous les domaines et la facilité financière. Porter à la main droite. Ne pas manger de porc. <strong>PRIX : 22200 F CFA, durée de vie 17 ans.</strong></p>
                 <div class="product-price">22 200 F CFA</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20BRS%20(Bague%20ou%20Bracelet%20Richesse%20de%20Salomon)." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Bague Richesse de Salomon sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-bpd">
                 <h3 class="product-name">BPD (Bague Protection de David)</h3>
                 <p class="product-desc">Protège contre toute attaque diabolique (sorcellerie, envoûtement, femme ou mari de nuit). Quiconque vous envoûte sera foudroyé.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20la%20BPD%20(Bague%20Protection%20de%20David)." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Bague Protection de David sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-tohozin">
                 <h3 class="product-name">TOHOZIN</h3>
                 <p class="product-desc">Talisman à accrocher ou enterrer à l'entrée de votre magasin, boutique, atelier, buvette. Attire la clientèle et éloigne les mauvais esprits.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20TOHOZIN." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Tohozin sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-pierre-david">
                 <h3 class="product-name">PIERRE SACRÉE DE DAVID</h3>
                 <p class="product-desc">Enterrée dans une maison ou installée dans un pot de fleur, éloigne de vous toute attaque satanique sur 400m².</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20la%20PIERRE%20SACREE%20DE%20DAVID." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Pierre Sacrée de David sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-mercure">
                 <h3 class="product-name">MERCURE (Aide-Mémoire)</h3>
                 <p class="product-desc">Conseillé aux élèves, étudiants et toute personne ayant besoin de mémoire pour le travail.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20MERCURE%20(Aide-Mémoire)." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Mercure Aide-Mémoire sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-poudre-volta">
                 <h3 class="product-name">POUDRE VOLTA H</h3>
                 <p class="product-desc">Traitement de la faiblesse sexuelle ou éjaculation précoce. Verser dans l'eau tiède et prendre.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20la%20POUDRE%20VOLTA%20H." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Poudre Volta H sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-savon-djakpata">
                 <h3 class="product-name">SAVON DJAKPATA (Protection)</h3>
                 <p class="product-desc">Se laver mardi ou vendredi nuit avec l'éponge végétale, un pied nu et l'autre chaussé. Quiconque cherchera à vous nuire sera mordu par le serpent.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20SAVON%20DJAKPATA." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Savon Djakpata sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-houetchehoun">
                 <h3 class="product-name">HOUETCHEHOUN (Attraction Clientèle)</h3>
                 <p class="product-desc">Savon qui attire la clientèle sur votre lieu de commerce : boutique, atelier, marché. Se laver les matins très tôt sauf mercredis.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20HOUETCHEHOUN." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Houetchehoun sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-parfum-venus">
                 <h3 class="product-name">PARFUM VÉNUS (Rencontrer l'âme sœur)</h3>
                 <p class="product-desc">Pour ceux qui ont souvent la malchance avec les hommes ou les femmes. Permet de rencontrer l'âme sœur.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20PARFUM%20VENUS." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Parfum Vénus sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-sel-venus">
                 <h3 class="product-name">SEL VÉNUS (Harmonie du foyer)</h3>
                 <p class="product-desc">Procure la paix dans le foyer. Cuisiner avec les vendredis, samedis et dimanches.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20SEL%20VENUS." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Sel Vénus sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-poudre-ganesh">
                 <h3 class="product-name">POUDRE DE GANESH</h3>
                 <p class="product-desc">À laper tôt les matins en prononçant : « C'est la langue qui reconnaît la saveur du sel, que tout le monde reconnaisse ma valeur en bien ». Efficace pour demandes et promesses.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20la%20POUDRE%20DE%20GANESH." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Poudre de Ganesh sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-savon-st-michel">
                 <h3 class="product-name">SAVON NEW ST MICHEL</h3>
                 <p class="product-desc">À base de psaumes et de feuilles de protection. Se laver les mardis et vendredis. Apporte une protection divine.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20SAVON%20NEW%20ST%20MICHEL." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Savon New St Michel sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-savon-sachiel">
                 <h3 class="product-name">SAVON NEW SACHIEL</h3>
                 <p class="product-desc">Savon de chance à utiliser tous les jours sauf mardi et vendredi. Devenu le savon quotidien de plusieurs personnes.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20SAVON%20NEW%20SACHIEL." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Savon New Sachiel sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-azebgemi">
                 <h3 class="product-name">AZEBGEMI</h3>
                 <p class="product-desc">Poudre à laper et à mettre dans l'eau de bain. Empêche qu'on vous donne la sorcellerie, protège les enfants.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20AZEBGEMI." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Azebgemi sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-encens-azemanze">
                 <h3 class="product-name">ENCENS AZEMANZE</h3>
                 <p class="product-desc">Mettre dans la braise la nuit à partir de 21h. Permet de savoir si quelqu'un est sorcier à côté de vous et éloigne les mauvais esprits.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20l'ENCENS%20AZEMANZE." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Encens Azemanze sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-bague-djanta">
                 <h3 class="product-name">BAGUE DJANTA</h3>
                 <p class="product-desc">Protection contre toute attaque satanique : envoûtement, sorcellerie, braquage, accident, empoisonnement, morsure de serpent, piqûre de scorpion.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20la%20BAGUE%20DJANTA." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Bague Djanta sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-croix-djanta">
                 <h3 class="product-name">CROIX DJANTA</h3>
                 <p class="product-desc">Croix de protection pour les enfants de 0 à 13 ans.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20la%20CROIX%20DJANTA." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Croix Djanta sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-bague-soleil">
                 <h3 class="product-name">BAGUE SOLEIL</h3>
                 <p class="product-desc">Bague de chance, ouvre les portes de la réussite financière, attire la clientèle, évite la disparition mystique de l'argent.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20la%20BAGUE%20SOLEIL." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Bague Soleil sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-bague-saturne">
                 <h3 class="product-name">BAGUE SATURNE</h3>
                 <p class="product-desc">À porter à la main gauche un samedi. Lutte contre les maladies du destin.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20la%20BAGUE%20SATURNE." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Bague Saturne sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-savon-astro">
                 <h3 class="product-name">SAVON ASTROLOGIQUE</h3>
                 <p class="product-desc">Conçu pour votre signe. Utiliser les matins avant 9h. Active les vibrations positives pour l'argent, l'amour, la réussite. Sur commande.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20SAVON%20ASTROLOGIQUE." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Savon Astrologique sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-huile-archange">
                 <h3 class="product-name">HUILE ARCHANGE</h3>
                 <p class="product-desc">À passer au nombril et plante des pieds la veille des jours défavorables. Quelques gouttes dans l'eau de bain mardis et vendredis. Éloigne les mauvais esprits.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20l'HUILE%20ARCHANGE." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Huile Archange sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-parfum-salomon">
                 <h3 class="product-name">PARFUM SALOMON DE GENÈVE</h3>
                 <p class="product-desc">Béni avec les psaumes. À utiliser pendant les mois défavorables. Attire chance, amour, santé.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20PARFUM%20SALOMON%20DE%20GENEVE." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Parfum Salomon de Genève sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-leco">
                 <h3 class="product-name">LÊCO</h3>
                 <p class="product-desc">Poudre qui renvoie le mari ou la femme de nuit. Lutte contre les rapports sexuels nocturnes et la masturbation.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20LÊCO." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Lêco sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-parfum-ganesh">
                 <h3 class="product-name">PARFUM DE GANESH</h3>
                 <p class="product-desc">Crée l'estime, l'amour, la chance, la bonne humeur. Élimine le rejet « wangbè ». Vous serez bienvenu partout.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20PARFUM%20DE%20GANESH." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Parfum de Ganesh sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-feuille-sacree">
                 <h3 class="product-name">FEUILLE SACRÉE (Eau de bain)</h3>
                 <p class="product-desc">Chaque signe a une feuille qui purifie son aura. Feuilles triturées et récupérées pour le bain.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20la%20FEUILLE%20SACREE." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Feuille Sacrée sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-essence-cliente">
                 <h3 class="product-name">ESSENCE CLIENTE</h3>
                 <p class="product-desc">Aspergez dans la boutique après le nettoyage du matin. Attire la clientèle.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20l'ESSENCE%20CLIENTE." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Essence Cliente sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-sel-mars">
                 <h3 class="product-name">SEL DE MARS</h3>
                 <p class="product-desc">À mettre dans les 4 coins de la chambre, sous le lit d'un malade, dans la moto/voiture. Purifie et éloigne les mauvais esprits.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20SEL%20DE%20MARS." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Sel de Mars sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-poudre-azemankpego">
                 <h3 class="product-name">POUDRE AZEMANKPEGO</h3>
                 <p class="product-desc">Lutte efficacement contre toute attaque satanique. À laper pieds nus. Facilite l'accouchement. <strong>PRIX : 5000 F CFA</strong></p>
                 <div class="product-price">5 000 F CFA</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20la%20POUDRE%20AZEMANKPEGO." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Poudre Azemankpego sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-nandin-boukaoun">
                 <h3 class="product-name">NANDIN BOUKAOUN</h3>
                 <p class="product-desc">Coffret : miel béni, 2 bics et savon. À utiliser à partir de la veille d'un examen ou concours.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20le%20NANDIN%20BOUKAOUN." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Nandin Boukaoun sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-eau-ahinadje">
                 <h3 class="product-name">EAU AHINADJE</h3>
                 <p class="product-desc">En cas de mévente, aspergez le lieu de commerce. Pour parcelle, voiture, nouvelle boutique, chambre.</p>
                 <div class="product-price">Sur commande</div>
                 <a href="https://wa.me/33784830416?text=Bonjour%20Rabbi%20TAN%2C%20je%20souhaite%20commander%20l'EAU%20AHINADJE." target="_blank" rel="noopener" class="product-btn" aria-label="Commander Eau Ahinadje sur WhatsApp">🟢 Commander</a>
             </article>
-            <article class="product-card reveal">
+            <article class="product-card reveal" id="product-eau-de-vie">
                 <h3 class="product-name">EAU DE VIE</h3>
                 <p class="product-desc">À utiliser le jour de son anniversaire. Donne un sens positif à votre vie au cours de l'année.</p>
                 <div class="product-price">Sur commande</div>
@@ -911,6 +927,28 @@
     const reveals=document.querySelectorAll('.reveal');
     const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.12});
     reveals.forEach(r=>obs.observe(r));
+</script>
+<!-- ✨ AJOUT 4 : module carrousel + tracking. Votre script ci-dessus n'est PAS modifié. -->
+<script type="module">
+    import { mountProductCarousel } from "./enhance.js";
+    import { initAutoTracking } from "./engagement.js";
+    initAutoTracking('boutique');
+    mountProductCarousel('#shopCarousel');
+
+    // Scroll doux vers le produit cliqué depuis le carrousel (ancrage #product-xxx)
+    function scrollToHash() {
+        const id = location.hash.replace('#', '');
+        if (!id) return;
+        const el = document.getElementById(id);
+        if (el) {
+            setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 400);
+            el.style.transition = 'box-shadow .5s';
+            el.style.boxShadow = '0 0 0 3px #7C3AED';
+            setTimeout(() => { el.style.boxShadow = ''; }, 2200);
+        }
+    }
+    scrollToHash();
+    window.addEventListener('hashchange', scrollToHash);
 </script>
 </body>
 </html>
