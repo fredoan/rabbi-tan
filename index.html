@@ -78,6 +78,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
+    <!-- ✨ AJOUT 1 : feuille de style des nouveaux composants (bannière ONG, carrousel, animations) -->
+    <link rel="stylesheet" href="enhance.css">
+
     <!-- ============ DONNÉES STRUCTURÉES : PERSON + IMAGES ============ -->
     <script type="application/ld+json">
     {
@@ -651,6 +654,19 @@
     </div>
 </section>
 
+<!-- ✨ AJOUT 2 : NOUVELLE section carrousel produits (n'enlève rien, s'ajoute après boutique-accueil) -->
+<section id="carousel-section" aria-label="Produits vedettes en défilement">
+    <div class="section-inner" style="padding-top:60px;padding-bottom:50px;">
+        <div class="section-header reveal">
+            <span class="section-tag">✦ En défilement</span>
+            <h2 class="section-title">Produits Vedettes</h2>
+            <div class="section-line"></div>
+            <p style="max-width:650px;margin:0 auto;color:var(--text-soft);">Faites défiler nos produits en vedette — cliquez pour voir le détail et commander.</p>
+        </div>
+        <div class="rt-carousel-wrap" id="homeCarousel" aria-label="Carrousel produits vedettes"></div>
+    </div>
+</section>
+
 <div class="divider" aria-hidden="true"><div class="divider-line"></div><div class="divider-star">✦ ✦ ✦</div><div class="divider-line"></div></div>
 
 <section id="radio" aria-label="Radio HWENDOHO">
@@ -910,6 +926,12 @@
             });
         }
     },800);
+</script>
+<!-- ✨ AJOUT 3 : module d'enrichissement (ONG + carrousel + tracking). Votre script ci-dessus n'est PAS modifié. -->
+<script type="module">
+    import { mountProductCarousel, injectOngBlock } from "./enhance.js";
+    injectOngBlock();
+    mountProductCarousel('#homeCarousel');
 </script>
 </body>
 </html>
